@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_file_sorting_wiz_1_1_available_key_words" xml:lang="en-US">
+<title>FileSortingWiz.AvailableKeyWords Class Reference</title>
+<indexterm><primary>FileSortingWiz.AvailableKeyWords</primary></indexterm>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_available_key_words_1a0a2376375eace3cb89bb8799946eb2fc">DataType</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_available_key_words_1a7a39282f84f7f1e177a25d9976147820">Source</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_available_key_words_1a9bb1fe03ba9d8edb6c8340d58efe2450">ValAttribute</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string[] <link linkend="_class_file_sorting_wiz_1_1_available_key_words_1a64c4d9c46cc792bbc0f7dc978d14d4c2">KeyWords</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00063">63</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_file_sorting_wiz_1_1_available_key_words_1a0a2376375eace3cb89bb8799946eb2fc"/><section>
+    <title>DataType</title>
+<indexterm><primary>DataType</primary><secondary>FileSortingWiz.AvailableKeyWords</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.AvailableKeyWords</primary><secondary>DataType</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.AvailableKeyWords.DataType<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00065">65</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_available_key_words_1a64c4d9c46cc792bbc0f7dc978d14d4c2"/><section>
+    <title>KeyWords</title>
+<indexterm><primary>KeyWords</primary><secondary>FileSortingWiz.AvailableKeyWords</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.AvailableKeyWords</primary><secondary>KeyWords</secondary></indexterm>
+<para><computeroutput>string [] FileSortingWiz.AvailableKeyWords.KeyWords<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00068">68</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_available_key_words_1a7a39282f84f7f1e177a25d9976147820"/><section>
+    <title>Source</title>
+<indexterm><primary>Source</primary><secondary>FileSortingWiz.AvailableKeyWords</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.AvailableKeyWords</primary><secondary>Source</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.AvailableKeyWords.Source<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00066">66</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_available_key_words_1a9bb1fe03ba9d8edb6c8340d58efe2450"/><section>
+    <title>ValAttribute</title>
+<indexterm><primary>ValAttribute</primary><secondary>FileSortingWiz.AvailableKeyWords</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.AvailableKeyWords</primary><secondary>ValAttribute</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.AvailableKeyWords.ValAttribute<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00067">67</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWiz/<link linkend="__rule_file_8cs">RuleFile.cs</link></section>
+</section>

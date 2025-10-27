@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mainpage" xml:lang="en-US">
+<title>
+<para>File Sorting Wizard Manual </para>
+</title>
+<indexterm><primary>File Sorting Wizard Manual</primary></indexterm>
+
+<para>File Sorting Wizard is a program to organize your files based on customizable rules in a YAML configuration file. This manual provides detailed instructions on how to install, configure, and use File Sorting Wizard effectively. </para>
+<section xml:id="_index_1autotoc_md0">
+<title>Table of Contents</title>
+<para><itemizedlist>
+<listitem>
+<para>Introduction</para>
+</listitem><listitem>
+<para>Installation</para>
+</listitem><listitem>
+<para>Configuration</para>
+</listitem><listitem>
+<para>Usage</para>
+</listitem><listitem>
+<para>Advanced Features</para>
+</listitem><listitem>
+<para>Troubleshooting</para>
+</listitem><listitem>
+<para>FAQ</para>
+</listitem><listitem>
+<para>Contributing</para>
+</listitem><listitem>
+<para>License</para>
+</listitem><listitem>
+<para>Contact</para>
+</listitem><listitem>
+<para>Changelog</para>
+</listitem><listitem>
+<para>Acknowledgements</para>
+</listitem><listitem>
+<para>Appendix</para>
+</listitem><listitem>
+<para><link linkend="_index">Index</link></para>
+</listitem><listitem>
+<para>Glossary</para>
+</listitem><listitem>
+<para>References</para>
+</listitem><listitem>
+<para>Credits</para>
+</listitem><listitem>
+<para>Support</para>
+</listitem><listitem>
+<para>Feedback</para>
+</listitem><listitem>
+<para>Related Projects</para>
+</listitem><listitem>
+<para>Resources</para>
+</listitem><listitem>
+<para>Community</para>
+</listitem><listitem>
+<para>Roadmap</para>
+</listitem><listitem>
+<para>Release Notes</para>
+</listitem><listitem>
+<para>Version History</para>
+</listitem><listitem>
+<para>Known Issues</para>
+</listitem><listitem>
+<para>Future Plans </para>
+</listitem></itemizedlist>
+</para>
+</section>
+</chapter>

@@ -1,0 +1,32 @@
+﻿\mainpage File Sorting Wizard Manual
+
+File Sorting Wizard is a program to organize your files based on customizable rules in a YAML configuration file.
+This manual provides detailed instructions on how to install, configure, and use File Sorting Wizard effectively.
+## Table of Contents
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Advanced Features](#advanced-features)
+- [Troubleshooting](#troubleshooting)
+- [FAQ](#faq)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Changelog](#changelog)
+- [Acknowledgements](#acknowledgements)
+- [Appendix](#appendix)
+- [Index](#index)
+- [Glossary](#glossary)
+- [References](#references)
+- [Credits](#credits)
+- [Support](#support)
+- [Feedback](#feedback)
+- [Related Projects](#related-projects)
+- [Resources](#resources)
+- [Community](#community)
+- [Roadmap](#roadmap)
+- [Release Notes](#release-notes)
+- [Version History](#version-history)
+- [Known Issues](#known-issues)
+- [Future Plans](#future-plans)

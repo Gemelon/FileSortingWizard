@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__program_8cs_source" xml:lang="en-US">
+<title>Program.cs</title>
+<indexterm><primary>D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWizard/Program.cs</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="__program_8cs_source_1l00001"/>00001 <emphasis role="comment">/********************************************************************************</emphasis>
+<anchor xml:id="__program_8cs_source_1l00002"/>00002 <emphasis role="comment">&#32;*&#32;MIT&#32;License</emphasis>
+<anchor xml:id="__program_8cs_source_1l00003"/>00003 <emphasis role="comment">&#32;*</emphasis>
+<anchor xml:id="__program_8cs_source_1l00004"/>00004 <emphasis role="comment">&#32;*&#32;Copyright&#32;(c)&#32;2025&#32;Thoms&#32;Stoll</emphasis>
+<anchor xml:id="__program_8cs_source_1l00005"/>00005 <emphasis role="comment">&#32;*</emphasis>
+<anchor xml:id="__program_8cs_source_1l00006"/>00006 <emphasis role="comment">&#32;*&#32;Permission&#32;is&#32;hereby&#32;granted,&#32;free&#32;of&#32;charge,&#32;to&#32;any&#32;person&#32;obtaining&#32;a&#32;copy</emphasis>
+<anchor xml:id="__program_8cs_source_1l00007"/>00007 <emphasis role="comment">&#32;*&#32;of&#32;this&#32;software&#32;and&#32;associated&#32;documentation&#32;files&#32;(the&#32;&quot;Software&quot;),&#32;to&#32;deal</emphasis>
+<anchor xml:id="__program_8cs_source_1l00008"/>00008 <emphasis role="comment">&#32;*&#32;in&#32;the&#32;Software&#32;without&#32;restriction,&#32;including&#32;without&#32;limitation&#32;the&#32;rights</emphasis>
+<anchor xml:id="__program_8cs_source_1l00009"/>00009 <emphasis role="comment">&#32;*&#32;to&#32;use,&#32;copy,&#32;modify,&#32;merge,&#32;publish,&#32;distribute,&#32;sublicense,&#32;and/or&#32;sell</emphasis>
+<anchor xml:id="__program_8cs_source_1l00010"/>00010 <emphasis role="comment">&#32;*&#32;copies&#32;of&#32;the&#32;Software,&#32;and&#32;to&#32;permit&#32;persons&#32;to&#32;whom&#32;the&#32;Software&#32;is</emphasis>
+<anchor xml:id="__program_8cs_source_1l00011"/>00011 <emphasis role="comment">&#32;*&#32;furnished&#32;to&#32;do&#32;so,&#32;subject&#32;to&#32;the&#32;following&#32;conditions:</emphasis>
+<anchor xml:id="__program_8cs_source_1l00012"/>00012 <emphasis role="comment">&#32;*</emphasis>
+<anchor xml:id="__program_8cs_source_1l00013"/>00013 <emphasis role="comment">&#32;*&#32;The&#32;above&#32;copyright&#32;notice&#32;and&#32;this&#32;permission&#32;notice&#32;shall&#32;be&#32;included&#32;in&#32;all</emphasis>
+<anchor xml:id="__program_8cs_source_1l00014"/>00014 <emphasis role="comment">&#32;*&#32;copies&#32;or&#32;substantial&#32;portions&#32;of&#32;the&#32;Software.</emphasis>
+<anchor xml:id="__program_8cs_source_1l00015"/>00015 <emphasis role="comment">&#32;*</emphasis>
+<anchor xml:id="__program_8cs_source_1l00016"/>00016 <emphasis role="comment">&#32;*&#32;THE&#32;SOFTWARE&#32;IS&#32;PROVIDED&#32;&quot;AS&#32;IS&quot;,&#32;WITHOUT&#32;WARRANTY&#32;OF&#32;ANY&#32;KIND,&#32;EXPRESS&#32;OR</emphasis>
+<anchor xml:id="__program_8cs_source_1l00017"/>00017 <emphasis role="comment">&#32;*&#32;IMPLIED,&#32;INCLUDING&#32;BUT&#32;NOT&#32;LIMITED&#32;TO&#32;THE&#32;WARRANTIES&#32;OF&#32;MERCHANTABILITY,</emphasis>
+<anchor xml:id="__program_8cs_source_1l00018"/>00018 <emphasis role="comment">&#32;*&#32;FITNESS&#32;FOR&#32;A&#32;PARTICULAR&#32;PURPOSE&#32;AND&#32;NONINFRINGEMENT.&#32;IN&#32;NO&#32;EVENT&#32;SHALL&#32;THE</emphasis>
+<anchor xml:id="__program_8cs_source_1l00019"/>00019 <emphasis role="comment">&#32;*&#32;AUTHORS&#32;OR&#32;COPYRIGHT&#32;HOLDERS&#32;BE&#32;LIABLE&#32;FOR&#32;ANY&#32;CLAIM,&#32;DAMAGES&#32;OR&#32;OTHER</emphasis>
+<anchor xml:id="__program_8cs_source_1l00020"/>00020 <emphasis role="comment">&#32;*&#32;LIABILITY,&#32;WHETHER&#32;IN&#32;AN&#32;ACTION&#32;OF&#32;CONTRACT,&#32;TORT&#32;OR&#32;OTHERWISE,&#32;ARISING&#32;FROM,</emphasis>
+<anchor xml:id="__program_8cs_source_1l00021"/>00021 <emphasis role="comment">&#32;*&#32;OUT&#32;OF&#32;OR&#32;IN&#32;CONNECTION&#32;WITH&#32;THE&#32;SOFTWARE&#32;OR&#32;THE&#32;USE&#32;OR&#32;OTHER&#32;DEALINGS&#32;IN&#32;THE</emphasis>
+<anchor xml:id="__program_8cs_source_1l00022"/>00022 <emphasis role="comment">&#32;*&#32;SOFTWARE.</emphasis>
+<anchor xml:id="__program_8cs_source_1l00023"/>00023 <emphasis role="comment">&#32;********************************************************************************/</emphasis>
+<anchor xml:id="__program_8cs_source_1l00024"/>00024 
+<anchor xml:id="__program_8cs_source_1l00025"/>00025 <emphasis role="comment">/********************************************************************************</emphasis>
+<anchor xml:id="__program_8cs_source_1l00026"/>00026 <emphasis role="comment">&#32;*&#32;FileSortingWizard</emphasis>
+<anchor xml:id="__program_8cs_source_1l00027"/>00027 <emphasis role="comment">&#32;*&#32;A&#32;file&#32;sorting&#32;wizard&#32;to&#32;organize&#32;your&#32;files&#32;based&#32;on&#32;customizable&#32;rules.</emphasis>
+<anchor xml:id="__program_8cs_source_1l00028"/>00028 <emphasis role="comment">&#32;********************************************************************************/</emphasis>
+<anchor xml:id="__program_8cs_source_1l00029"/>00029 
+<anchor xml:id="__program_8cs_source_1l00030"/>00030 <emphasis role="keyword">using&#32;</emphasis><link linkend="_namespace_file_sorting_wiz">FileSortingWiz</link>;
+<anchor xml:id="__program_8cs_source_1l00031"/>00031 <emphasis role="keyword">using&#32;</emphasis>System.CommandLine;
+<anchor xml:id="__program_8cs_source_1l00032"/>00032 <emphasis role="keyword">using&#32;</emphasis>static&#32;Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+<anchor xml:id="__program_8cs_source_1l00033"/><link linkend="__program_8cs_1a2f731e18d6065d37867503f49f97558c">00033</link> <emphasis role="keyword">using&#32;</emphasis><link linkend="__program_8cs_1a2f731e18d6065d37867503f49f97558c">Command</link>&#32;=&#32;System.CommandLine.Command;
+<anchor xml:id="__program_8cs_source_1l00034"/>00034 
+<anchor xml:id="__program_8cs_source_1l00035"/><link linkend="_namespace_file_sorting_wizard">00035</link> <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_file_sorting_wizard">FileSortingWizard</link>
+<anchor xml:id="__program_8cs_source_1l00036"/>00036 {
+<anchor xml:id="__program_8cs_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<emphasis role="keyword">internal</emphasis>&#32;<emphasis role="keyword">class&#32;</emphasis>Program
+<anchor xml:id="__program_8cs_source_1l00038"/>00038 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__program_8cs_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_class_file_sorting_wiz_1_1_wizard">Wizard</link>&#32;wizard&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_file_sorting_wiz_1_1_wizard">Wizard</link>();
+<anchor xml:id="__program_8cs_source_1l00040"/>00040 
+<anchor xml:id="__program_8cs_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;Main(<emphasis role="keywordtype">string</emphasis>[]&#32;args)
+<anchor xml:id="__program_8cs_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__program_8cs_source_1l00043"/>00043 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;RootCommand&#32;rootCommand&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;RootCommand(<emphasis role="stringliteral">&quot;TSFileWizard&#32;-&#32;A&#32;tool&#32;to&#32;sort&#32;files&#32;on&#32;the&#32;HDD&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__program_8cs_1a2f731e18d6065d37867503f49f97558c">Command</link>&#32;executeCommand&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="__program_8cs_1a2f731e18d6065d37867503f49f97558c">Command</link>(<emphasis role="stringliteral">&quot;execute&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Execute&#32;the&#32;rule&#32;file&#32;(Collection&#32;and&#32;Sorting)&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__program_8cs_1a2f731e18d6065d37867503f49f97558c">Command</link>&#32;collectCommand&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="__program_8cs_1a2f731e18d6065d37867503f49f97558c">Command</link>(<emphasis role="stringliteral">&quot;collect&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Execute&#32;the&#32;collection&#32;of&#32;file&#32;informations&#32;in&#32;to&#32;the&#32;database&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__program_8cs_1a2f731e18d6065d37867503f49f97558c">Command</link>&#32;sortCommand&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="__program_8cs_1a2f731e18d6065d37867503f49f97558c">Command</link>(<emphasis role="stringliteral">&quot;sort&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;Executes&#32;the&#32;file&#32;sorting&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00047"/>00047 
+<anchor xml:id="__program_8cs_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Option&lt;bool&gt;&#32;silentOption&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Option&lt;bool&gt;(<emphasis role="stringliteral">&quot;--silent&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;-s&quot;</emphasis>)
+<anchor xml:id="__program_8cs_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__program_8cs_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Description&#32;=&#32;<emphasis role="stringliteral">&quot;Prevents&#32;the&#32;output&#32;of&#32;program&#32;messages&quot;</emphasis>,
+<anchor xml:id="__program_8cs_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HelpName&#32;=&#32;<emphasis role="stringliteral">&quot;Silent&quot;</emphasis>,
+<anchor xml:id="__program_8cs_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Required&#32;=&#32;<emphasis role="keyword">false</emphasis>,&#32;<emphasis role="comment">//&#32;Set&#32;IsRequired&#32;to&#32;true&#32;for&#32;the&#32;silent&#32;option</emphasis>
+<anchor xml:id="__program_8cs_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DefaultValueFactory&#32;=&#32;_&#32;=&gt;&#32;<emphasis role="keyword">false</emphasis>&#32;<emphasis role="comment">//&#32;Correctly&#32;use&#32;a&#32;lambda&#32;to&#32;provide&#32;a&#32;default&#32;value</emphasis>
+<anchor xml:id="__program_8cs_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="__program_8cs_source_1l00055"/>00055 
+<anchor xml:id="__program_8cs_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Option&lt;string&gt;&#32;rulesFileOption&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Option&lt;string&gt;(<emphasis role="stringliteral">&quot;--rules&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;-r&quot;</emphasis>)
+<anchor xml:id="__program_8cs_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__program_8cs_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Description&#32;=&#32;<emphasis role="stringliteral">&quot;Path&#32;to&#32;the&#32;rule&#32;file&quot;</emphasis>,
+<anchor xml:id="__program_8cs_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HelpName&#32;=&#32;<emphasis role="stringliteral">&quot;Rule&#32;File&quot;</emphasis>,
+<anchor xml:id="__program_8cs_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Required&#32;=&#32;<emphasis role="keyword">true</emphasis>&#32;<emphasis role="comment">//&#32;Set&#32;IsRequired&#32;to&#32;true&#32;for&#32;the&#32;rule&#32;option</emphasis>
+<anchor xml:id="__program_8cs_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="__program_8cs_source_1l00062"/>00062 
+<anchor xml:id="__program_8cs_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Option&lt;string&gt;&#32;inputDirectoryOption&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Option&lt;string&gt;(<emphasis role="stringliteral">&quot;--input&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;-i&quot;</emphasis>)
+<anchor xml:id="__program_8cs_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__program_8cs_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Description&#32;=&#32;<emphasis role="stringliteral">&quot;Path&#32;to&#32;the&#32;input&#32;directory&quot;</emphasis>,
+<anchor xml:id="__program_8cs_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HelpName&#32;=&#32;<emphasis role="stringliteral">&quot;Input&#32;Directory&quot;</emphasis>,
+<anchor xml:id="__program_8cs_source_1l00067"/>00067 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Required&#32;=&#32;<emphasis role="keyword">true</emphasis>,
+<anchor xml:id="__program_8cs_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//DefaultValueFactory&#32;=&#32;_&#32;=&gt;&#32;string.Empty&#32;//&#32;Correctly&#32;use&#32;a&#32;lambda&#32;to&#32;provide&#32;a&#32;default&#32;value</emphasis>
+<anchor xml:id="__program_8cs_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="__program_8cs_source_1l00070"/>00070 
+<anchor xml:id="__program_8cs_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Option&lt;string&gt;&#32;outputDirectoryOption&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Option&lt;string&gt;(<emphasis role="stringliteral">&quot;--output&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;-o&quot;</emphasis>)
+<anchor xml:id="__program_8cs_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__program_8cs_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Description&#32;=&#32;<emphasis role="stringliteral">&quot;Path&#32;to&#32;the&#32;output&#32;directory&quot;</emphasis>,
+<anchor xml:id="__program_8cs_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HelpName&#32;=&#32;<emphasis role="stringliteral">&quot;Output&#32;Directory&quot;</emphasis>,
+<anchor xml:id="__program_8cs_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Required&#32;=&#32;<emphasis role="keyword">false</emphasis>,
+<anchor xml:id="__program_8cs_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DefaultValueFactory&#32;=&#32;_&#32;=&gt;&#32;string.Empty&#32;<emphasis role="comment">//&#32;Correctly&#32;use&#32;a&#32;lambda&#32;to&#32;provide&#32;a&#32;default&#32;value</emphasis>
+<anchor xml:id="__program_8cs_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="__program_8cs_source_1l00078"/>00078 
+<anchor xml:id="__program_8cs_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;executeCommand.SetAction(parseResult&#32;=&gt;
+<anchor xml:id="__program_8cs_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__program_8cs_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>?&#32;ruleFileName&#32;=&#32;parseResult.GetValue&lt;<emphasis role="keywordtype">string</emphasis>&gt;(<emphasis role="stringliteral">&quot;--rules&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>?&#32;inputDirectory&#32;=&#32;parseResult.GetValue&lt;<emphasis role="keywordtype">string</emphasis>&gt;(<emphasis role="stringliteral">&quot;--input&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>?&#32;outputDirectory&#32;=&#32;parseResult.GetValue&lt;<emphasis role="keywordtype">string</emphasis>&gt;(<emphasis role="stringliteral">&quot;--output&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>?&#32;silent&#32;=&#32;parseResult.GetValue&lt;<emphasis role="keywordtype">bool</emphasis>&gt;(<emphasis role="stringliteral">&quot;--silent&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ExecuteRules(ruleFileName,&#32;inputDirectory,&#32;outputDirectory,&#32;silent);
+<anchor xml:id="__program_8cs_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;});
+<anchor xml:id="__program_8cs_source_1l00087"/>00087 
+<anchor xml:id="__program_8cs_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;collectCommand.SetAction(parseResult&#32;=&gt;
+<anchor xml:id="__program_8cs_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__program_8cs_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>?&#32;ruleFileName&#32;=&#32;parseResult.GetValue&lt;<emphasis role="keywordtype">string</emphasis>&gt;(<emphasis role="stringliteral">&quot;--rules&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>?&#32;inputDirectory&#32;=&#32;parseResult.GetValue&lt;<emphasis role="keywordtype">string</emphasis>&gt;(<emphasis role="stringliteral">&quot;--input&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>?&#32;outputDirectory&#32;=&#32;parseResult.GetValue&lt;<emphasis role="keywordtype">string</emphasis>&gt;(<emphasis role="stringliteral">&quot;--output&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>?&#32;silent&#32;=&#32;parseResult.GetValue&lt;<emphasis role="keywordtype">bool</emphasis>&gt;(<emphasis role="stringliteral">&quot;--silent&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ExecuteCollection(ruleFileName,&#32;inputDirectory,&#32;outputDirectory,&#32;silent);
+<anchor xml:id="__program_8cs_source_1l00095"/>00095 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;});
+<anchor xml:id="__program_8cs_source_1l00096"/>00096 
+<anchor xml:id="__program_8cs_source_1l00097"/>00097 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sortCommand.SetAction(parseResult&#32;=&gt;
+<anchor xml:id="__program_8cs_source_1l00098"/>00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__program_8cs_source_1l00099"/>00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>?&#32;ruleFileName&#32;=&#32;parseResult.GetValue&lt;<emphasis role="keywordtype">string</emphasis>&gt;(<emphasis role="stringliteral">&quot;--rules&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00100"/>00100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>?&#32;inputDirectory&#32;=&#32;parseResult.GetValue&lt;<emphasis role="keywordtype">string</emphasis>&gt;(<emphasis role="stringliteral">&quot;--input&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00101"/>00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>?&#32;outputDirectory&#32;=&#32;parseResult.GetValue&lt;<emphasis role="keywordtype">string</emphasis>&gt;(<emphasis role="stringliteral">&quot;--output&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>?&#32;silent&#32;=&#32;parseResult.GetValue&lt;<emphasis role="keywordtype">bool</emphasis>&gt;(<emphasis role="stringliteral">&quot;--silent&quot;</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00103"/>00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ExecuteSorting(ruleFileName,&#32;inputDirectory,&#32;outputDirectory,&#32;silent);
+<anchor xml:id="__program_8cs_source_1l00104"/>00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;});
+<anchor xml:id="__program_8cs_source_1l00105"/>00105 
+<anchor xml:id="__program_8cs_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;executeCommand.Add(rulesFileOption);
+<anchor xml:id="__program_8cs_source_1l00107"/>00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;executeCommand.Add(inputDirectoryOption);
+<anchor xml:id="__program_8cs_source_1l00108"/>00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;executeCommand.Add(outputDirectoryOption);
+<anchor xml:id="__program_8cs_source_1l00109"/>00109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;executeCommand.Add(silentOption);
+<anchor xml:id="__program_8cs_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rootCommand.Add(executeCommand);
+<anchor xml:id="__program_8cs_source_1l00111"/>00111 
+<anchor xml:id="__program_8cs_source_1l00112"/>00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;collectCommand.Add(rulesFileOption);
+<anchor xml:id="__program_8cs_source_1l00113"/>00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;collectCommand.Add(inputDirectoryOption);
+<anchor xml:id="__program_8cs_source_1l00114"/>00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;collectCommand.Add(outputDirectoryOption);
+<anchor xml:id="__program_8cs_source_1l00115"/>00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;collectCommand.Add(silentOption);
+<anchor xml:id="__program_8cs_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rootCommand.Add(collectCommand);
+<anchor xml:id="__program_8cs_source_1l00117"/>00117 
+<anchor xml:id="__program_8cs_source_1l00118"/>00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sortCommand.Add(rulesFileOption);
+<anchor xml:id="__program_8cs_source_1l00119"/>00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sortCommand.Add(inputDirectoryOption);
+<anchor xml:id="__program_8cs_source_1l00120"/>00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sortCommand.Add(outputDirectoryOption);
+<anchor xml:id="__program_8cs_source_1l00121"/>00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sortCommand.Add(silentOption);
+<anchor xml:id="__program_8cs_source_1l00122"/>00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rootCommand.Add(sortCommand);
+<anchor xml:id="__program_8cs_source_1l00123"/>00123 
+<anchor xml:id="__program_8cs_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ParseResult&#32;parseResult&#32;=&#32;rootCommand.Parse(args);
+<anchor xml:id="__program_8cs_source_1l00125"/>00125 
+<anchor xml:id="__program_8cs_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;parseResult.Invoke();
+<anchor xml:id="__program_8cs_source_1l00127"/>00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__program_8cs_source_1l00128"/>00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;ExecuteRules(<emphasis role="keywordtype">string</emphasis>?&#32;ruleFileName,&#32;<emphasis role="keywordtype">string</emphasis>?&#32;inputDirectory,&#32;<emphasis role="keywordtype">string</emphasis>?&#32;outputDirectory,&#32;<emphasis role="keywordtype">bool</emphasis>?&#32;silent)
+<anchor xml:id="__program_8cs_source_1l00129"/>00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__program_8cs_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//wizard.ExecuteRules(ruleFileName&#32;??&#32;string.Empty,&#32;inputDirectory&#32;??&#32;string.Empty,&#32;outputDirectory&#32;??&#32;string.Empty);</emphasis>
+<anchor xml:id="__program_8cs_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__program_8cs_source_1l00132"/>00132 
+<anchor xml:id="__program_8cs_source_1l00133"/>00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;ExecuteCollection(<emphasis role="keywordtype">string</emphasis>?&#32;ruleFileName,&#32;<emphasis role="keywordtype">string</emphasis>?&#32;inputDirectory,&#32;<emphasis role="keywordtype">string</emphasis>?&#32;outputDirectory,&#32;<emphasis role="keywordtype">bool</emphasis>?&#32;silent)
+<anchor xml:id="__program_8cs_source_1l00134"/>00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__program_8cs_source_1l00135"/>00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;wizard.<link linkend="_class_file_sorting_wiz_1_1_wizard_1ac99030116aeccc5f1ce41c0dd15e80cf">CollectFileData</link>(ruleFileName&#32;??&#32;<emphasis role="keywordtype">string</emphasis>.Empty,&#32;inputDirectory&#32;??&#32;<emphasis role="keywordtype">string</emphasis>.Empty,&#32;outputDirectory&#32;??&#32;<emphasis role="keywordtype">string</emphasis>.Empty,&#32;silent&#32;??&#32;<emphasis role="keyword">false</emphasis>);
+<anchor xml:id="__program_8cs_source_1l00136"/>00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__program_8cs_source_1l00137"/>00137 
+<anchor xml:id="__program_8cs_source_1l00138"/>00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;ExecuteSorting(<emphasis role="keywordtype">string</emphasis>?&#32;ruleFileName,&#32;<emphasis role="keywordtype">string</emphasis>?&#32;inputDirectory,&#32;<emphasis role="keywordtype">string</emphasis>?&#32;outputDirectory,&#32;<emphasis role="keywordtype">bool</emphasis>?&#32;silent)
+<anchor xml:id="__program_8cs_source_1l00139"/>00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__program_8cs_source_1l00140"/>00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//wizard.SortFiles(ruleFileName&#32;??&#32;string.Empty,&#32;inputDirectory&#32;??&#32;string.Empty,&#32;outputDirectory&#32;??&#32;string.Empty);</emphasis>
+<anchor xml:id="__program_8cs_source_1l00141"/>00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__program_8cs_source_1l00142"/>00142 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__program_8cs_source_1l00143"/>00143 }
+</programlisting></section>

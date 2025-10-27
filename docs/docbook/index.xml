@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>FileSortingWizart</title>
+    </info>
+    <xi:include href="mainpage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<chapter>
+    <title>Directory Documentation</title>
+    <xi:include href="dir_8765280e3ea3171448f806682f31bd89.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dir_faeed3dea09cc80d6548057057f59d22.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dir_2354744dae9da4f7456237945fb036cf.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dir_ab8e5c96f68ab7e6ed4e27b9d39e9611.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dir_dd17628028f4e085eec42a7531267011.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dir_908693d74320ecf5a3b77b02207c16d3.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dir_19a553ad69c6e8f8256dd6495ba1d6da.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dir_77f1a7e51e3550b80b3320969293755e.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="dir_df47bdcca8c2002d03637845f692944c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Namespace Documentation</title>
+    <xi:include href="namespace_file_sorting_wiz.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="namespace_file_sorting_wizard.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="class_file_sorting_wiz_1_1_available_key_words.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_file_sorting_wiz_1_1_file_rules.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_file_sorting_wiz_1_1_meta_info_field.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_file_sorting_wiz_1_1_rule.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_file_sorting_wiz_1_1_rule_file.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_file_sorting_wiz_1_1_wizard.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="_lib_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_lib_8cs_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="obj_2_debug_2net8_80_2_8_n_e_t_core_app_00_version_0av8_80_8_assembly_attributes_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="obj_2_debug_2net8_80_2_8_n_e_t_core_app_00_version_0av8_80_8_assembly_attributes_8cs_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="rd_2obj_2_debug_2net8_80_2_8_n_e_t_core_app_00_version_0av8_80_8_assembly_attributes_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="rd_2obj_2_debug_2net8_80_2_8_n_e_t_core_app_00_version_0av8_80_8_assembly_attributes_8cs_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_file_sorting_wiz_8_assembly_info_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_file_sorting_wiz_8_assembly_info_8cs_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_file_sorting_wiz_8_global_usings_8g_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_file_sorting_wiz_8_global_usings_8g_8cs_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_rule_file_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_rule_file_8cs_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_wizard_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_wizard_8cs_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="index_8md.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_file_sorting_wizard_8_assembly_info_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_file_sorting_wizard_8_assembly_info_8cs_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_file_sorting_wizard_8_global_usings_8g_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_file_sorting_wizard_8_global_usings_8g_8cs_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_program_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_program_8cs_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_r_e_a_d_m_e_8md.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

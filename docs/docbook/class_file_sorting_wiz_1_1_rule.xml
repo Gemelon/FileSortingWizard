@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_file_sorting_wiz_1_1_rule" xml:lang="en-US">
+<title>FileSortingWiz.Rule Class Reference</title>
+<indexterm><primary>FileSortingWiz.Rule</primary></indexterm>
+<para>
+
+<para>Represents a set of rules and configurations for managing file paths, metadata, and file-specific rules. </para>
+ 
+</para>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_rule_1ae0e488cc29e299f67ea1f21f306650d9">DataBasePath</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_rule_1aebb6b171f3f8571f8a284c9aee613ec5">DataBaseFileName</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_rule_1ad08fec6a002981258906a98b2502ba12">logFileName</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_rule_1a783b415510c94625e1364bb7e3a1d0f6">MediaRootPath</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_rule_1a037b06e9841866f276bd24fc5263e56f">videoRootPath</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_rule_1abbb460d5b39f0f3257e5dfae1167b6b0">imageRootPath</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_rule_1a3d241acf1c4caf438570e3183a8d1f8e">documentRootPath</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_rule_1a8258b6d9acee2a1455970a07d76c9718">musicRootPath</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>Dictionary&lt; String, <link linkend="_class_file_sorting_wiz_1_1_meta_info_field">MetaInfoField</link> &gt; <link linkend="_class_file_sorting_wiz_1_1_rule_1a3a801ef2cdff1994b317833f068e3774">metaInfoField</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>Dictionary&lt; string, <link linkend="_class_file_sorting_wiz_1_1_file_rules">FileRules</link> &gt; <link linkend="_class_file_sorting_wiz_1_1_rule_1acb0524618e5e7b2792d19e3e25e8dfae">fileRules</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Represents a set of rules and configurations for managing file paths, metadata, and file-specific rules. </para>
+
+
+
+<para>This class provides properties to define paths for various media types, a database configuration, and dictionaries for metadata fields and file-specific rules. It is designed to centralize and organize file management settings.</para>
+<para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00042">42</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_1aebb6b171f3f8571f8a284c9aee613ec5"/><section>
+    <title>DataBaseFileName</title>
+<indexterm><primary>DataBaseFileName</primary><secondary>FileSortingWiz.Rule</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Rule</primary><secondary>DataBaseFileName</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.Rule.DataBaseFileName<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00045">45</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_1ae0e488cc29e299f67ea1f21f306650d9"/><section>
+    <title>DataBasePath</title>
+<indexterm><primary>DataBasePath</primary><secondary>FileSortingWiz.Rule</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Rule</primary><secondary>DataBasePath</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.Rule.DataBasePath<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00044">44</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_1a3d241acf1c4caf438570e3183a8d1f8e"/><section>
+    <title>documentRootPath</title>
+<indexterm><primary>documentRootPath</primary><secondary>FileSortingWiz.Rule</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Rule</primary><secondary>documentRootPath</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.Rule.documentRootPath<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00050">50</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_1acb0524618e5e7b2792d19e3e25e8dfae"/><section>
+    <title>fileRules</title>
+<indexterm><primary>fileRules</primary><secondary>FileSortingWiz.Rule</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Rule</primary><secondary>fileRules</secondary></indexterm>
+<para><computeroutput>Dictionary&lt;string, <link linkend="_class_file_sorting_wiz_1_1_file_rules">FileRules</link>&gt; FileSortingWiz.Rule.fileRules<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00054">54</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_1abbb460d5b39f0f3257e5dfae1167b6b0"/><section>
+    <title>imageRootPath</title>
+<indexterm><primary>imageRootPath</primary><secondary>FileSortingWiz.Rule</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Rule</primary><secondary>imageRootPath</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.Rule.imageRootPath<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00049">49</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_1ad08fec6a002981258906a98b2502ba12"/><section>
+    <title>logFileName</title>
+<indexterm><primary>logFileName</primary><secondary>FileSortingWiz.Rule</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Rule</primary><secondary>logFileName</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.Rule.logFileName<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00046">46</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_1a783b415510c94625e1364bb7e3a1d0f6"/><section>
+    <title>MediaRootPath</title>
+<indexterm><primary>MediaRootPath</primary><secondary>FileSortingWiz.Rule</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Rule</primary><secondary>MediaRootPath</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.Rule.MediaRootPath<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00047">47</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_1a3a801ef2cdff1994b317833f068e3774"/><section>
+    <title>metaInfoField</title>
+<indexterm><primary>metaInfoField</primary><secondary>FileSortingWiz.Rule</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Rule</primary><secondary>metaInfoField</secondary></indexterm>
+<para><computeroutput>Dictionary&lt;String, <link linkend="_class_file_sorting_wiz_1_1_meta_info_field">MetaInfoField</link>&gt; FileSortingWiz.Rule.metaInfoField<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00053">53</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_1a8258b6d9acee2a1455970a07d76c9718"/><section>
+    <title>musicRootPath</title>
+<indexterm><primary>musicRootPath</primary><secondary>FileSortingWiz.Rule</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Rule</primary><secondary>musicRootPath</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.Rule.musicRootPath<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00051">51</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_1a037b06e9841866f276bd24fc5263e56f"/><section>
+    <title>videoRootPath</title>
+<indexterm><primary>videoRootPath</primary><secondary>FileSortingWiz.Rule</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Rule</primary><secondary>videoRootPath</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.Rule.videoRootPath<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00048">48</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWiz/<link linkend="__rule_file_8cs">RuleFile.cs</link></section>
+</section>

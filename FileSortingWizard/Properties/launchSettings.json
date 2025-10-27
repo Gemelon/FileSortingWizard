@@ -1,8 +1,16 @@
 {
   "profiles": {
-    "FileSortingWizard": {
+    "Collect Data": {
       "commandName": "Project",
       "commandLineArgs": "collect --rules \"D:\\Projekte\\Projekte_2025\\GitHub\\FileSortingWizard\\FileSortingWizard\\FileSortingWizardRules.yaml\" --input \"D:\\Projekte\\Projekte_2025\\GitHub\\FileSortingWizardTestMedia\""
+    },
+    "Move Files": {
+      "commandName": "Project",
+      "commandLineArgs": "move --rules \"D:\\Projekte\\Projekte_2025\\GitHub\\FileSortingWizard\\FileSortingWizard\\FileSortingWizardRules.yaml\""
+    },
+    "Copy Files": {
+      "commandName": "Project",
+      "commandLineArgs": "copy --rules \"D:\\Projekte\\Projekte_2025\\GitHub\\FileSortingWizard\\FileSortingWizard\\FileSortingWizardRules.yaml\""
     }
   }
 }

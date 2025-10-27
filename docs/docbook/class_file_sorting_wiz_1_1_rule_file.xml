@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_file_sorting_wiz_1_1_rule_file" xml:lang="en-US">
+<title>FileSortingWiz.RuleFile Class Reference</title>
+<indexterm><primary>FileSortingWiz.RuleFile</primary></indexterm>
+<para>
+
+<para>Represents a file containing rules for organizing and managing files. </para>
+ 
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_file_sorting_wiz_1_1_rule_file_1aa33aa7079a0aa2900055862a06b43446">Deserialize</link> (string ruleFileName)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_file_sorting_wiz_1_1_rule_file_1ada278fbfb8dc700f012d5640713cd6cd">Serialize</link> (string ruleFileName)</para>
+
+<para>For testing purposes only. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_file_sorting_wiz_1_1_rule">Rule</link> <link linkend="_class_file_sorting_wiz_1_1_rule_file_1a2ea55cbacd89dc5f3efd8134f919cd8d">rule</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Represents a file containing rules for organizing and managing files. </para>
+
+
+
+<para>The <link linkend="_class_file_sorting_wiz_1_1_rule_file">RuleFile</link> class provides functionality to deserialize rules from a YAML file and serialize rules for testing purposes. It encapsulates a <link linkend="_class_file_sorting_wiz_1_1_rule">Rule</link> object that defines the structure and behavior of the rules.</para>
+<para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00085">85</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_file_1aa33aa7079a0aa2900055862a06b43446"/><section>
+    <title>Deserialize()</title>
+<indexterm><primary>Deserialize</primary><secondary>FileSortingWiz.RuleFile</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.RuleFile</primary><secondary>Deserialize</secondary></indexterm>
+<para><computeroutput>void FileSortingWiz.RuleFile.Deserialize (string ruleFileName)</computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00089">89</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_file_1ada278fbfb8dc700f012d5640713cd6cd"/><section>
+    <title>Serialize()</title>
+<indexterm><primary>Serialize</primary><secondary>FileSortingWiz.RuleFile</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.RuleFile</primary><secondary>Serialize</secondary></indexterm>
+<para><computeroutput>void FileSortingWiz.RuleFile.Serialize (string ruleFileName)</computeroutput></para><para>
+
+<para>For testing purposes only. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ruleFileName</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00103">103</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_file_sorting_wiz_1_1_rule_file_1a2ea55cbacd89dc5f3efd8134f919cd8d"/><section>
+    <title>rule</title>
+<indexterm><primary>rule</primary><secondary>FileSortingWiz.RuleFile</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.RuleFile</primary><secondary>rule</secondary></indexterm>
+<para><computeroutput><link linkend="_class_file_sorting_wiz_1_1_rule">Rule</link> FileSortingWiz.RuleFile.rule<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00087">87</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWiz/<link linkend="__rule_file_8cs">RuleFile.cs</link></section>
+</section>

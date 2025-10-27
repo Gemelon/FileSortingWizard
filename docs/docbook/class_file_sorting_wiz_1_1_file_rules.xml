@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_file_sorting_wiz_1_1_file_rules" xml:lang="en-US">
+<title>FileSortingWiz.FileRules Class Reference</title>
+<indexterm><primary>FileSortingWiz.FileRules</primary></indexterm>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_file_rules_1a1a36506a2cc470f8043ca5f76917fce8">Category</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_file_rules_1a53db08a3e8d8860b9199c814405bdfc6">RootPath</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_file_rules_1a44429075c3e657f13b5f30a06ab5fbb8">SortingPatern</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_file_sorting_wiz_1_1_file_rules_1aeb9e3a896f2aeb5b3bb2ae35c58c546f">FileNamePatern</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00071">71</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_file_sorting_wiz_1_1_file_rules_1a1a36506a2cc470f8043ca5f76917fce8"/><section>
+    <title>Category</title>
+<indexterm><primary>Category</primary><secondary>FileSortingWiz.FileRules</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.FileRules</primary><secondary>Category</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.FileRules.Category<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00073">73</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_file_rules_1aeb9e3a896f2aeb5b3bb2ae35c58c546f"/><section>
+    <title>FileNamePatern</title>
+<indexterm><primary>FileNamePatern</primary><secondary>FileSortingWiz.FileRules</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.FileRules</primary><secondary>FileNamePatern</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.FileRules.FileNamePatern<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00076">76</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_file_rules_1a53db08a3e8d8860b9199c814405bdfc6"/><section>
+    <title>RootPath</title>
+<indexterm><primary>RootPath</primary><secondary>FileSortingWiz.FileRules</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.FileRules</primary><secondary>RootPath</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.FileRules.RootPath<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00074">74</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_file_rules_1a44429075c3e657f13b5f30a06ab5fbb8"/><section>
+    <title>SortingPatern</title>
+<indexterm><primary>SortingPatern</primary><secondary>FileSortingWiz.FileRules</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.FileRules</primary><secondary>SortingPatern</secondary></indexterm>
+<para><computeroutput>string FileSortingWiz.FileRules.SortingPatern<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00075">75</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWiz/<link linkend="__rule_file_8cs">RuleFile.cs</link></section>
+</section>

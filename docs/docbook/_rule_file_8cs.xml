@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__rule_file_8cs" xml:lang="en-US">
+<title>D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWiz/RuleFile.cs File Reference</title>
+<indexterm><primary>D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWiz/RuleFile.cs</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_rule">FileSortingWiz.Rule</link></para>
+
+<para>Represents a set of rules and configurations for managing file paths, metadata, and file-specific rules. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_meta_info_field">FileSortingWiz.MetaInfoField</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_available_key_words">FileSortingWiz.AvailableKeyWords</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_file_rules">FileSortingWiz.FileRules</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_rule_file">FileSortingWiz.RuleFile</link></para>
+
+<para>Represents a file containing rules for organizing and managing files. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_file_sorting_wiz">FileSortingWiz</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

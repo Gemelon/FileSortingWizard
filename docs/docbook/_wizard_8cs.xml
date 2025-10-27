@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__wizard_8cs" xml:lang="en-US">
+<title>D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWiz/Wizard.cs File Reference</title>
+<indexterm><primary>D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWiz/Wizard.cs</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_wizard">FileSortingWiz.Wizard</link></para>
+
+<para>Represents a wizard that processes rule files and manages file data collection. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_file_sorting_wiz">FileSortingWiz</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

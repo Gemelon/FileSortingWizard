@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dirs" xml:lang="en-US">
+<title>Directories</title>
+
+<para>Debug </para>
+
+<para>net8.0 </para>
+
+<para>.NETCoreApp,Version=v8.0.AssemblyAttributes.cs </para>
+
+<para>FileSortingWiz.AssemblyInfo.cs </para>
+
+<para>FileSortingWiz.GlobalUsings.g.cs </para>
+
+<para>Debug </para>
+
+<para>net8.0 </para>
+
+<para>.NETCoreApp,Version=v8.0.AssemblyAttributes.cs </para>
+
+<para>FileSortingWizard.AssemblyInfo.cs </para>
+
+<para>FileSortingWizard.GlobalUsings.g.cs </para>
+
+<para>FileSortingWiz </para>
+
+<para>obj </para>
+
+<para>Debug </para>
+
+<para>net8.0 </para>
+
+<para>.NETCoreApp,Version=v8.0.AssemblyAttributes.cs </para>
+
+<para>FileSortingWiz.AssemblyInfo.cs </para>
+
+<para>FileSortingWiz.GlobalUsings.g.cs </para>
+
+<para>Lib.cs </para>
+
+<para>RuleFile.cs </para>
+
+<para>Wizard.cs </para>
+
+<para>FileSortingWizard </para>
+
+<para>Manual </para>
+
+<para>obj </para>
+
+<para>Debug </para>
+
+<para>net8.0 </para>
+
+<para>.NETCoreApp,Version=v8.0.AssemblyAttributes.cs </para>
+
+<para>FileSortingWizard.AssemblyInfo.cs </para>
+
+<para>FileSortingWizard.GlobalUsings.g.cs </para>
+
+<para>Program.cs </para>
+
+<para>Manual </para>
+
+<para>net8.0 </para>
+
+<para>.NETCoreApp,Version=v8.0.AssemblyAttributes.cs </para>
+
+<para>FileSortingWiz.AssemblyInfo.cs </para>
+
+<para>FileSortingWiz.GlobalUsings.g.cs </para>
+
+<para>net8.0 </para>
+
+<para>.NETCoreApp,Version=v8.0.AssemblyAttributes.cs </para>
+
+<para>FileSortingWizard.AssemblyInfo.cs </para>
+
+<para>FileSortingWizard.GlobalUsings.g.cs </para>
+
+<para>obj </para>
+
+<para>Debug </para>
+
+<para>net8.0 </para>
+
+<para>.NETCoreApp,Version=v8.0.AssemblyAttributes.cs </para>
+
+<para>FileSortingWiz.AssemblyInfo.cs </para>
+
+<para>FileSortingWiz.GlobalUsings.g.cs </para>
+
+<para>obj </para>
+
+<para>Debug </para>
+
+<para>net8.0 </para>
+
+<para>.NETCoreApp,Version=v8.0.AssemblyAttributes.cs </para>
+
+<para>FileSortingWizard.AssemblyInfo.cs </para>
+
+<para>FileSortingWizard.GlobalUsings.g.cs </para>
+</section>

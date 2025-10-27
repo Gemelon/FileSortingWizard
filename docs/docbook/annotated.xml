@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="en-US">
+<title>Class List</title>
+Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_class_file_sorting_wiz_1_1_available_key_words">FileSortingWiz.AvailableKeyWords</link><link linkend="_class_file_sorting_wiz_1_1_file_rules">FileSortingWiz.FileRules</link><link linkend="_class_file_sorting_wiz_1_1_meta_info_field">FileSortingWiz.MetaInfoField</link><link linkend="_class_file_sorting_wiz_1_1_rule">FileSortingWiz.Rule</link>
+<para>Represents a set of rules and configurations for managing file paths, metadata, and file-specific rules </para>
+<link linkend="_class_file_sorting_wiz_1_1_rule_file">FileSortingWiz.RuleFile</link>
+<para>Represents a file containing rules for organizing and managing files </para>
+<link linkend="_class_file_sorting_wiz_1_1_wizard">FileSortingWiz.Wizard</link>
+<para>Represents a wizard that processes rule files and manages file data collection </para>
+</section>

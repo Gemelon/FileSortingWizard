@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_df47bdcca8c2002d03637845f692944c" xml:lang="en-US">
+<title>D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWizard/obj Directory Reference</title>
+<indexterm><primary>D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWizard/obj Directory Reference</primary></indexterm>
+Directory dependency graph for obj:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_df47bdcca8c2002d03637845f692944c_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_faeed3dea09cc80d6548057057f59d22">Debug</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

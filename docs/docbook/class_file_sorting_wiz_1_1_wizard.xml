@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_file_sorting_wiz_1_1_wizard" xml:lang="en-US">
+<title>FileSortingWiz.Wizard Class Reference</title>
+<indexterm><primary>FileSortingWiz.Wizard</primary></indexterm>
+<para>
+
+<para>Represents a wizard that processes rule files and manages file data collection. </para>
+ 
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_file_sorting_wiz_1_1_wizard_1ac99030116aeccc5f1ce41c0dd15e80cf">CollectFileData</link> (string ruleFileName, string inputDirectory, string outputDirectory, bool silent)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Represents a wizard that processes rule files and manages file data collection. </para>
+
+
+
+<para>The <link linkend="_class_file_sorting_wiz_1_1_wizard">Wizard</link> class provides functionality to initialize components and collect file data based on a specified rule file and directory paths. It is designed to handle operations related to rule file deserialization and logging.</para>
+<para>
+Definition at line <link linkend="__wizard_8cs_source_1l00039">39</link> of file <link linkend="__wizard_8cs_source">Wizard.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_file_sorting_wiz_1_1_wizard_1ac99030116aeccc5f1ce41c0dd15e80cf"/><section>
+    <title>CollectFileData()</title>
+<indexterm><primary>CollectFileData</primary><secondary>FileSortingWiz.Wizard</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Wizard</primary><secondary>CollectFileData</secondary></indexterm>
+<para><computeroutput>void FileSortingWiz.Wizard.CollectFileData (string ruleFileName, string inputDirectory, string outputDirectory, bool silent)</computeroutput></para><para>
+Definition at line <link linkend="__wizard_8cs_source_1l00061">61</link> of file <link linkend="__wizard_8cs_source">Wizard.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWiz/<link linkend="__wizard_8cs">Wizard.cs</link></section>
+</section>

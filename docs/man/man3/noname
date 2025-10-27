@@ -1,0 +1,25 @@
+.TH "" 3 "Version 0.1.0" "FileSortingWizart" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Debug net8\&.0 \&.NETCoreApp,Version=v8\&.0\&.AssemblyAttributes\&.cs FileSortingWiz\&.AssemblyInfo\&.cs FileSortingWiz\&.GlobalUsings\&.g\&.cs 
+.PP
+Debug net8\&.0 \&.NETCoreApp,Version=v8\&.0\&.AssemblyAttributes\&.cs FileSortingWizard\&.AssemblyInfo\&.cs FileSortingWizard\&.GlobalUsings\&.g\&.cs 
+.PP
+FileSortingWiz obj Debug net8\&.0 \&.NETCoreApp,Version=v8\&.0\&.AssemblyAttributes\&.cs FileSortingWiz\&.AssemblyInfo\&.cs FileSortingWiz\&.GlobalUsings\&.g\&.cs 
+.PP
+Lib\&.cs RuleFile\&.cs Wizard\&.cs 
+.PP
+FileSortingWizard Manual obj Debug net8\&.0 \&.NETCoreApp,Version=v8\&.0\&.AssemblyAttributes\&.cs FileSortingWizard\&.AssemblyInfo\&.cs FileSortingWizard\&.GlobalUsings\&.g\&.cs 
+.PP
+Program\&.cs 
+.PP
+Manual net8\&.0 \&.NETCoreApp,Version=v8\&.0\&.AssemblyAttributes\&.cs FileSortingWiz\&.AssemblyInfo\&.cs FileSortingWiz\&.GlobalUsings\&.g\&.cs 
+.PP
+net8\&.0 \&.NETCoreApp,Version=v8\&.0\&.AssemblyAttributes\&.cs FileSortingWizard\&.AssemblyInfo\&.cs FileSortingWizard\&.GlobalUsings\&.g\&.cs 
+.PP
+obj Debug net8\&.0 \&.NETCoreApp,Version=v8\&.0\&.AssemblyAttributes\&.cs FileSortingWiz\&.AssemblyInfo\&.cs FileSortingWiz\&.GlobalUsings\&.g\&.cs 
+.PP
+obj Debug net8\&.0 \&.NETCoreApp,Version=v8\&.0\&.AssemblyAttributes\&.cs FileSortingWizard\&.AssemblyInfo\&.cs FileSortingWizard\&.GlobalUsings\&.g\&.cs 
+.PP
+

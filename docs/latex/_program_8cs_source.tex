@@ -1,0 +1,149 @@
+\doxysection{Program.\+cs}
+\hypertarget{_program_8cs_source}{}\label{_program_8cs_source}\index{D:/Projekte/Projekte\_2025/GitHub/FileSortingWizard/FileSortingWizard/Program.cs@{D:/Projekte/Projekte\_2025/GitHub/FileSortingWizard/FileSortingWizard/Program.cs}}
+\mbox{\hyperlink{_program_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00001}00001\ \textcolor{comment}{/********************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00002}00002\ \textcolor{comment}{\ *\ MIT\ License}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00004}00004\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2025\ Thoms\ Stoll}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00005}00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00006}00006\ \textcolor{comment}{\ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00007}00007\ \textcolor{comment}{\ *\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00008}00008\ \textcolor{comment}{\ *\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00009}00009\ \textcolor{comment}{\ *\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00010}00010\ \textcolor{comment}{\ *\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00011}00011\ \textcolor{comment}{\ *\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00012}00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00013}00013\ \textcolor{comment}{\ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00014}00014\ \textcolor{comment}{\ *\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00015}00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00016}00016\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00017}00017\ \textcolor{comment}{\ *\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00018}00018\ \textcolor{comment}{\ *\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00019}00019\ \textcolor{comment}{\ *\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00020}00020\ \textcolor{comment}{\ *\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00021}00021\ \textcolor{comment}{\ *\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00022}00022\ \textcolor{comment}{\ *\ SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00023}00023\ \textcolor{comment}{\ ********************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00025}00025\ \textcolor{comment}{/********************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00026}00026\ \textcolor{comment}{\ *\ FileSortingWizard}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00027}00027\ \textcolor{comment}{\ *\ A\ file\ sorting\ wizard\ to\ organize\ your\ files\ based\ on\ customizable\ rules.}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00028}00028\ \textcolor{comment}{\ ********************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00030}00030\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespace_file_sorting_wiz}{FileSortingWiz}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }System.CommandLine;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }static\ Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00033}\mbox{\hyperlink{_program_8cs_a2f731e18d6065d37867503f49f97558c}{00033}}\ \textcolor{keyword}{using\ }\mbox{\hyperlink{_program_8cs_a2f731e18d6065d37867503f49f97558c}{Command}}\ =\ System.CommandLine.Command;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00035}\mbox{\hyperlink{namespace_file_sorting_wizard}{00035}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_file_sorting_wizard}{FileSortingWizard}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{class\ }Program}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard}{Wizard}}\ wizard\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard}{Wizard}}();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ Main(\textcolor{keywordtype}{string}[]\ args)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ RootCommand\ rootCommand\ =\ \textcolor{keyword}{new}\ RootCommand(\textcolor{stringliteral}{"{}TSFileWizard\ -\/\ A\ tool\ to\ sort\ files\ on\ the\ HDD"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_program_8cs_a2f731e18d6065d37867503f49f97558c}{Command}}\ executeCommand\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{_program_8cs_a2f731e18d6065d37867503f49f97558c}{Command}}(\textcolor{stringliteral}{"{}execute"{}},\ \textcolor{stringliteral}{"{}Execute\ the\ rule\ file\ (Collection\ and\ Sorting)"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_program_8cs_a2f731e18d6065d37867503f49f97558c}{Command}}\ collectCommand\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{_program_8cs_a2f731e18d6065d37867503f49f97558c}{Command}}(\textcolor{stringliteral}{"{}collect"{}},\ \textcolor{stringliteral}{"{}Execute\ the\ collection\ of\ file\ informations\ in\ to\ the\ database"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_program_8cs_a2f731e18d6065d37867503f49f97558c}{Command}}\ sortCommand\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{_program_8cs_a2f731e18d6065d37867503f49f97558c}{Command}}(\textcolor{stringliteral}{"{}sort"{}},\ \textcolor{stringliteral}{"{}Executes\ the\ file\ sorting"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ Option<bool>\ silentOption\ =\ \textcolor{keyword}{new}\ Option<bool>(\textcolor{stringliteral}{"{}-\/-\/silent"{}},\ \textcolor{stringliteral}{"{}-\/s"{}})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Description\ =\ \textcolor{stringliteral}{"{}Prevents\ the\ output\ of\ program\ messages"{}},}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HelpName\ =\ \textcolor{stringliteral}{"{}Silent"{}},}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Required\ =\ \textcolor{keyword}{false},\ \textcolor{comment}{//\ Set\ IsRequired\ to\ true\ for\ the\ silent\ option}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DefaultValueFactory\ =\ \_\ =>\ \textcolor{keyword}{false}\ \textcolor{comment}{//\ Correctly\ use\ a\ lambda\ to\ provide\ a\ default\ value}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ Option<string>\ rulesFileOption\ =\ \textcolor{keyword}{new}\ Option<string>(\textcolor{stringliteral}{"{}-\/-\/rules"{}},\ \textcolor{stringliteral}{"{}-\/r"{}})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Description\ =\ \textcolor{stringliteral}{"{}Path\ to\ the\ rule\ file"{}},}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HelpName\ =\ \textcolor{stringliteral}{"{}Rule\ File"{}},}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Required\ =\ \textcolor{keyword}{true}\ \textcolor{comment}{//\ Set\ IsRequired\ to\ true\ for\ the\ rule\ option}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ Option<string>\ inputDirectoryOption\ =\ \textcolor{keyword}{new}\ Option<string>(\textcolor{stringliteral}{"{}-\/-\/input"{}},\ \textcolor{stringliteral}{"{}-\/i"{}})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Description\ =\ \textcolor{stringliteral}{"{}Path\ to\ the\ input\ directory"{}},}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HelpName\ =\ \textcolor{stringliteral}{"{}Input\ Directory"{}},}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Required\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//DefaultValueFactory\ =\ \_\ =>\ string.Empty\ //\ Correctly\ use\ a\ lambda\ to\ provide\ a\ default\ value}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ Option<string>\ outputDirectoryOption\ =\ \textcolor{keyword}{new}\ Option<string>(\textcolor{stringliteral}{"{}-\/-\/output"{}},\ \textcolor{stringliteral}{"{}-\/o"{}})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Description\ =\ \textcolor{stringliteral}{"{}Path\ to\ the\ output\ directory"{}},}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HelpName\ =\ \textcolor{stringliteral}{"{}Output\ Directory"{}},}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Required\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DefaultValueFactory\ =\ \_\ =>\ string.Empty\ \textcolor{comment}{//\ Correctly\ use\ a\ lambda\ to\ provide\ a\ default\ value}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ executeCommand.SetAction(parseResult\ =>}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}?\ ruleFileName\ =\ parseResult.GetValue<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}-\/-\/rules"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}?\ inputDirectory\ =\ parseResult.GetValue<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}-\/-\/input"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}?\ outputDirectory\ =\ parseResult.GetValue<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}-\/-\/output"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}?\ silent\ =\ parseResult.GetValue<\textcolor{keywordtype}{bool}>(\textcolor{stringliteral}{"{}-\/-\/silent"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ExecuteRules(ruleFileName,\ inputDirectory,\ outputDirectory,\ silent);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ collectCommand.SetAction(parseResult\ =>}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}?\ ruleFileName\ =\ parseResult.GetValue<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}-\/-\/rules"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}?\ inputDirectory\ =\ parseResult.GetValue<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}-\/-\/input"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}?\ outputDirectory\ =\ parseResult.GetValue<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}-\/-\/output"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}?\ silent\ =\ parseResult.GetValue<\textcolor{keywordtype}{bool}>(\textcolor{stringliteral}{"{}-\/-\/silent"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ExecuteCollection(ruleFileName,\ inputDirectory,\ outputDirectory,\ silent);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ sortCommand.SetAction(parseResult\ =>}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}?\ ruleFileName\ =\ parseResult.GetValue<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}-\/-\/rules"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}?\ inputDirectory\ =\ parseResult.GetValue<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}-\/-\/input"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}?\ outputDirectory\ =\ parseResult.GetValue<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}-\/-\/output"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}?\ silent\ =\ parseResult.GetValue<\textcolor{keywordtype}{bool}>(\textcolor{stringliteral}{"{}-\/-\/silent"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ExecuteSorting(ruleFileName,\ inputDirectory,\ outputDirectory,\ silent);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ executeCommand.Add(rulesFileOption);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ executeCommand.Add(inputDirectoryOption);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ executeCommand.Add(outputDirectoryOption);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ executeCommand.Add(silentOption);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ rootCommand.Add(executeCommand);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ collectCommand.Add(rulesFileOption);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ collectCommand.Add(inputDirectoryOption);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ collectCommand.Add(outputDirectoryOption);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ collectCommand.Add(silentOption);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ rootCommand.Add(collectCommand);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ sortCommand.Add(rulesFileOption);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ sortCommand.Add(inputDirectoryOption);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ sortCommand.Add(outputDirectoryOption);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ sortCommand.Add(silentOption);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ rootCommand.Add(sortCommand);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ ParseResult\ parseResult\ =\ rootCommand.Parse(args);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ parseResult.Invoke();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ExecuteRules(\textcolor{keywordtype}{string}?\ ruleFileName,\ \textcolor{keywordtype}{string}?\ inputDirectory,\ \textcolor{keywordtype}{string}?\ outputDirectory,\ \textcolor{keywordtype}{bool}?\ silent)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//wizard.ExecuteRules(ruleFileName\ ??\ string.Empty,\ inputDirectory\ ??\ string.Empty,\ outputDirectory\ ??\ string.Empty);}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ExecuteCollection(\textcolor{keywordtype}{string}?\ ruleFileName,\ \textcolor{keywordtype}{string}?\ inputDirectory,\ \textcolor{keywordtype}{string}?\ outputDirectory,\ \textcolor{keywordtype}{bool}?\ silent)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ wizard.\mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard_ac99030116aeccc5f1ce41c0dd15e80cf}{CollectFileData}}(ruleFileName\ ??\ \textcolor{keywordtype}{string}.Empty,\ inputDirectory\ ??\ \textcolor{keywordtype}{string}.Empty,\ outputDirectory\ ??\ \textcolor{keywordtype}{string}.Empty,\ silent\ ??\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ExecuteSorting(\textcolor{keywordtype}{string}?\ ruleFileName,\ \textcolor{keywordtype}{string}?\ inputDirectory,\ \textcolor{keywordtype}{string}?\ outputDirectory,\ \textcolor{keywordtype}{bool}?\ silent)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//wizard.SortFiles(ruleFileName\ ??\ string.Empty,\ inputDirectory\ ??\ string.Empty,\ outputDirectory\ ??\ string.Empty);}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00142}00142\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00143}00143\ \}}
+
+\end{DoxyCode}

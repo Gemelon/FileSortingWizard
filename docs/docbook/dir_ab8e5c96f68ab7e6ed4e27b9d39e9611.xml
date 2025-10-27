@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_ab8e5c96f68ab7e6ed4e27b9d39e9611" xml:lang="en-US">
+<title>D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWizard Directory Reference</title>
+<indexterm><primary>D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWizard Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_dd17628028f4e085eec42a7531267011">Manual</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_df47bdcca8c2002d03637845f692944c">obj</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__program_8cs">Program.cs</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

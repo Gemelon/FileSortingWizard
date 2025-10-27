@@ -1,14 +1,44 @@
 ﻿
+###########################################################################
+# MIT License
 
-dataBasePath: "..\\FileSortingWizardDatabase"
+# Copyright (c) 2025 Thomas Stoll
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+##########################################################################
+#
+# Configuration file for File Sorting Wizard application
+#
+#########################################################################
+
+# Define paths for database and media files
+dataBasePath: "..\\..\\..\\..\\..\\FileSortingWizardDatabase"
 dataBaseFileName: FileSortingWizardDatabase.db
-mediaRootPath: "..\\FileSortingWizardTestMedia"
-videoRootPath: "..\\FileSortingWizardTestMedia\\Videos"
-imageRootPath: "..\\FileSortingWizardTestMedia\\Images"
-documentRootPath: "..\\FileSortingWizardTestMedia\\Documents"
-musicRootPath: "..\\FileSortingWizardTestMedia\\Music"
+logFileName: "FileSortingWizard.log"
+mediaRootPath: "..\\..\\..\\..\\..\\FileSortingWizardTestMedia"
+videoRootPath: "..\\..\\..\\..\\..\\FileSortingWizardTestMedia\\Videos"
+imageRootPath: "..\\..\\..\\..\\..\\FileSortingWizardTestMedia\\Images"
+documentRootPath: "..\\..\\..\\..\\..\\FileSortingWizardTestMedia\\Documents"
+musicRootPath: "..\\..\\..\\..\\..\\FileSortingWizardTestMedia\\Music"
 
-
+# Define meta information fields and their sources for different file types
 metaInfoField:
   .JPG:
     availableKeyWords:
@@ -26,21 +56,472 @@ metaInfoField:
         keyWords:
         - DirectoryName
 
-  .ARW:
-    availableKeyWords:
+      Attributes:
+        dataType: STRING
+        source: FILEINFO
+        keyWords:
+        - Attributes
+
+      FileSize:
+        dataType: LONG
+        source: FILEINFO
+        keyWords:
+        - Length
+
+      CreationTime:
+        dataType: DATETIME
+        source: FILEINFO
+        keyWords:
+        - CreationTime
+
+      ModificationTime:
+        dataType: DATETIME
+        source: FILEINFO
+        keyWords:
+        - LastWriteTime
+
+      AccessTime:
+        dataType: DATETIME
+        source: FILEINFO
+        keyWords:
+        - LastAccessTime
+
+      IsReadOnly:
+        dataType: BOOLEAN
+        source: FILEINFO
+        valAttribute: HIGHEST
+        keyWords:
+        - IsReadOnly
+
+      MIMEType:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - File:MIMEType
+
+      Permissions:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - System:FilePermissions
+
       Make:
         dataType: STRING
-        source: EXIF
-        valAttribute: make
+        source: EXIFTOOL
         keyWords:
-        - CameraMake
+        - DJI:Make
+        - IFD0:Make
+
       Model:
         dataType: STRING
-        source: EXIF
-        valAttribute: model
+        source: EXIFTOOL
         keyWords:
-        - CameraModel
+        - IFD0:Model
+        - IFD0:UniqueCameraModel
 
+      Orientation:
+        dataType: INT
+        source: EXIFTOOL
+        keyWords:
+        - IFD0:Orientation
+
+      # Software:
+      #   dataType: STRING
+      #   source: EXIFTOOL
+      #   keyWords:
+      #   - IFD0:Software
+
+      DateTimeOriginal:
+        dataType: DATETIME
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:DateTimeOriginal
+
+      LensModel:
+       dataType: STRING
+       source: EXIFTOOL
+       keyWords:
+       - EXIF:LensModel
+
+      FocalLength:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:FocalLength
+
+      ExposureTime:
+       dataType: STRING
+       source: EXIFTOOL
+       keyWords:
+       - EXIF:ExposureTime
+
+      FNumber:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:FNumber
+
+      ISOSpeedRatings:
+        dataType: INT
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:ISOSpeedRatings
+
+      Flash:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:Flash
+
+      ExposureProgram:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:ExposureProgram
+
+      MeteringMode:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:MeteringMode
+
+      WhiteBalance:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:WhiteBalance
+
+      ColorSpace:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:ColorSpace
+
+      GPSLatitude:
+        dataType: DOUBLE
+        source: EXIFTOOL
+        keyWords:
+        - GPS:GPSLatitude
+
+      GPSLongitude:
+        dataType: DOUBLE
+        source: EXIFTOOL
+        keyWords:
+        - GPS:GPSLongitude
+
+      XResolution:
+        dataType: INT   
+        source: EXIFTOOL
+        keyWords:
+        - IFD0:XResolution
+        - IFD1:XResolution
+        - JFIF:XResolution
+
+      YResolution:
+        dataType: INT
+        source: EXIFTOOL
+        keyWords:
+        - IFD0:YResolution
+        - IFD1:YResolution
+        - JFIF:YResolution
+
+      ResolutionUnit:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - IFD0:ResolutionUnit
+        - JFIF:ResolutionUnit
+
+      ImageHeight:
+        dataType: INT
+        source: EXIFTOOL
+        keyWords:
+        - File:ImageHeight
+        - ExifIFD:ExifImageHeight
+        - Sony:SonyImageHeight
+
+      ImageWidth:
+        dataType: INT
+        source: EXIFTOOL
+        keyWords:
+        - File:ImageWidth
+        - ExifIFD:ExifImageWidth
+        - Sony:SonyImageWidth
+        
+      MetaCreationTime:
+        dataType: DATETIME
+        source: EXIFTOOL
+        valAttribute: LOWEST
+        keyWords:
+        - Composite:DateTimeCreated
+        - Composite:SubSecCreateDate
+        - ExifIFD:CreateDate
+        - IPTC:DateCreated
+        - IPTC:TimeCreated
+        - XMP-photoshop:DateCreated
+        - XMP-xmp:CreateDate
+
+      MetaModificationTime:
+        dataType: DATETIME
+        source: EXIFTOOL
+        valAttribute: HIGHEST
+        keyWords:
+        - Composite:SubSecModifyDate
+        - IFD0:ModifyDate
+        - System:FileModifyDate
+        - XMP-xmp:ModifyDate
+
+      MetaAccessTime:
+        dataType: DATETIME
+        source: EXIFTOOL
+        valAttribute: HIGHEST
+        keyWords:
+        - "IFD0: ModifyDate"
+        - IFD0:ModifyDate
+        - ExifIFD:ModifyDate
+
+  .ARW:
+    availableKeyWords:
+      FileName:
+        dataType: STRING
+        source: FILEINFO
+        valAttribute: title
+        keyWords:
+        - Name
+
+      FilePath:
+        dataType: STRING
+        source: FILEINFO
+        valAttribute: path
+        keyWords:
+        - DirectoryName
+
+      Attributes:
+        dataType: STRING
+        source: FILEINFO
+        keyWords:
+        - Attributes
+
+      FileSize:
+        dataType: LONG
+        source: FILEINFO
+        keyWords:
+        - Length
+
+      CreationTime:
+        dataType: DATETIME
+        source: FILEINFO
+        keyWords:
+        - CreationTime
+
+      ModificationTime:
+        dataType: DATETIME
+        source: FILEINFO
+        keyWords:
+        - LastWriteTime
+
+      AccessTime:
+        dataType: DATETIME
+        source: FILEINFO
+        keyWords:
+        - LastAccessTime
+
+      IsReadOnly:
+        dataType: BOOLEAN
+        source: FILEINFO
+        valAttribute: HIGHEST
+        keyWords:
+        - IsReadOnly
+
+      MIMEType:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - File:MIMEType
+
+      Permissions:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - System:FilePermissions
+
+      Make:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - DJI:Make
+        - IFD0:Make
+
+      Model:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - IFD0:Model
+        - IFD0:UniqueCameraModel
+
+      Orientation:
+        dataType: INT
+        source: EXIFTOOL
+        keyWords:
+        - IFD0:Orientation
+
+      # Software:
+      #   dataType: STRING
+      #   source: EXIFTOOL
+      #   keyWords:
+      #   - IFD0:Software
+
+      DateTimeOriginal:
+        dataType: DATETIME
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:DateTimeOriginal
+
+      LensModel:
+       dataType: STRING
+       source: EXIFTOOL
+       keyWords:
+       - EXIF:LensModel
+
+      FocalLength:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:FocalLength
+
+      ExposureTime:
+       dataType: STRING
+       source: EXIFTOOL
+       keyWords:
+       - EXIF:ExposureTime
+
+      FNumber:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:FNumber
+
+      ISOSpeedRatings:
+        dataType: INT
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:ISOSpeedRatings
+
+      Flash:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:Flash
+
+      ExposureProgram:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:ExposureProgram
+
+      MeteringMode:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:MeteringMode
+
+      WhiteBalance:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:WhiteBalance
+
+      ColorSpace:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - EXIF:ColorSpace
+
+      GPSLatitude:
+        dataType: DOUBLE
+        source: EXIFTOOL
+        keyWords:
+        - GPS:GPSLatitude
+
+      GPSLongitude:
+        dataType: DOUBLE
+        source: EXIFTOOL
+        keyWords:
+        - GPS:GPSLongitude
+
+      XResolution:
+        dataType: INT   
+        source: EXIFTOOL
+        keyWords:
+        - IFD0:XResolution
+        - IFD1:XResolution
+        - JFIF:XResolution
+
+      YResolution:
+        dataType: INT
+        source: EXIFTOOL
+        keyWords:
+        - IFD0:YResolution
+        - IFD1:YResolution
+        - JFIF:YResolution
+
+      ResolutionUnit:
+        dataType: STRING
+        source: EXIFTOOL
+        keyWords:
+        - IFD0:ResolutionUnit
+        - JFIF:ResolutionUnit
+
+      ImageHeight:
+        dataType: INT
+        source: EXIFTOOL
+        keyWords:
+        - File:ImageHeight
+        - ExifIFD:ExifImageHeight
+        - Sony:SonyImageHeight
+
+      ImageWidth:
+        dataType: INT
+        source: EXIFTOOL
+        keyWords:
+        - File:ImageWidth
+        - ExifIFD:ExifImageWidth
+        - Sony:SonyImageWidth
+        
+      MetaCreationTime:
+        dataType: DATETIME
+        source: EXIFTOOL
+        valAttribute: LOWEST
+        keyWords:
+        - Composite:DateTimeCreated
+        - Composite:SubSecCreateDate
+        - ExifIFD:CreateDate
+        - IPTC:DateCreated
+        - IPTC:TimeCreated
+        - XMP-photoshop:DateCreated
+        - XMP-xmp:CreateDate
+
+      MetaModificationTime:
+        dataType: DATETIME
+        source: EXIFTOOL
+        valAttribute: HIGHEST
+        keyWords:
+        - Composite:SubSecModifyDate
+        - IFD0:ModifyDate
+        - System:FileModifyDate
+        - XMP-xmp:ModifyDate
+
+      MetaAccessTime:
+        dataType: DATETIME
+        source: EXIFTOOL
+        valAttribute: HIGHEST
+        keyWords:
+        - "IFD0: ModifyDate"
+        - IFD0:ModifyDate
+        - ExifIFD:ModifyDate
+
+
+# Define rules for sorting and naming files based on their meta information
 fileRules:
   .JPG:
     category: Image

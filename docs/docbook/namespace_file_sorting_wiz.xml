@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_file_sorting_wiz" xml:lang="en-US">
+<title>FileSortingWiz Namespace Reference</title>
+<indexterm><primary>FileSortingWiz</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <emphasis role="strong">Lib</emphasis></para>
+
+<para>Provides utility methods for writing messages to a log file, optionally displaying them in the console, and performing string manipulations. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_rule">Rule</link></para>
+
+<para>Represents a set of rules and configurations for managing file paths, metadata, and file-specific rules. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_meta_info_field">MetaInfoField</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_available_key_words">AvailableKeyWords</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_file_rules">FileRules</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_rule_file">RuleFile</link></para>
+
+<para>Represents a file containing rules for organizing and managing files. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_wizard">Wizard</link></para>
+
+<para>Represents a wizard that processes rule files and manages file data collection. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

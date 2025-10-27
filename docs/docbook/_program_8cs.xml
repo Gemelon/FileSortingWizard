@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__program_8cs" xml:lang="en-US">
+<title>D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWizard/Program.cs File Reference</title>
+<indexterm><primary>D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWizard/Program.cs</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <emphasis role="strong">FileSortingWizard.Program</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_file_sorting_wizard">FileSortingWizard</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="__program_8cs_1a2f731e18d6065d37867503f49f97558c">Command</link> = System.CommandLine.Command</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__program_8cs_1a2f731e18d6065d37867503f49f97558c"/><section>
+    <title>Command</title>
+<indexterm><primary>Command</primary><secondary>Program.cs</secondary></indexterm>
+<indexterm><primary>Program.cs</primary><secondary>Command</secondary></indexterm>
+<para><computeroutput>using <link linkend="__program_8cs_1a2f731e18d6065d37867503f49f97558c">Command</link> = System.CommandLine.Command</computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00033">33</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+</section>
+</section>

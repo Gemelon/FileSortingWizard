@@ -1,20 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-//using System.Text.Json;
-using System.Threading.Tasks;
-using YamlDotNet.Core;
+﻿/********************************************************************************
+ * MIT License
+ *
+ * Copyright (c) 2025 Thoms Stoll
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ ********************************************************************************/
+
+/********************************************************************************
+ * FileSortingWizard
+ * A file sorting wizard to organize your files based on customizable rules.
+ ********************************************************************************/
+
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
+
 namespace FileSortingWiz
 {
+    /// <summary>
+    /// Represents a set of rules and configurations for managing file paths, metadata, and file-specific rules.
+    /// </summary>
+    /// <remarks>This class provides properties to define paths for various media types, a database
+    /// configuration,  and dictionaries for metadata fields and file-specific rules. It is designed to centralize and
+    /// organize  file management settings.</remarks>
     public class Rule
     {
         public string DataBasePath { get; set; }
         public string DataBaseFileName { get; set; }
+        public string logFileName { get; set; }
 		public string MediaRootPath { get; set; }
 		public string videoRootPath { get; set; }
 		public string imageRootPath { get; set; }
@@ -47,12 +76,12 @@ namespace FileSortingWiz
         public string FileNamePatern { get; set; }
     }
 
-    //public class UpperCaseNamingPolicy : JsonNamingPolicy
-    //{
-    //    public override string ConvertName(string name) =>
-    //        name.ToUpper();
-    //}
-
+    /// <summary>
+    /// Represents a file containing rules for organizing and managing files.
+    /// </summary>
+    /// <remarks>The <see cref="RuleFile"/> class provides functionality to deserialize rules from a YAML file
+    /// and serialize rules for testing purposes. It encapsulates a <see cref="Rule"/> object that defines the structure
+    /// and behavior of the rules.</remarks>
     public class RuleFile
     {
         public Rule rule { get; set; }
@@ -67,7 +96,11 @@ namespace FileSortingWiz
             rule = deserializer.Deserialize<Rule>(yml);
         }
 
-        public void Serialize(string ruleFileName)
+		/// <summary>
+		/// For testing purposes only
+		/// </summary>
+		/// <param name="ruleFileName"></param>
+		public void Serialize(string ruleFileName)
         {
             var rule = new Rule
             {

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_file_sorting_wiz_1_1_meta_info_field" xml:lang="en-US">
+<title>FileSortingWiz.MetaInfoField Class Reference</title>
+<indexterm><primary>FileSortingWiz.MetaInfoField</primary></indexterm>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>Dictionary&lt; String, <link linkend="_class_file_sorting_wiz_1_1_available_key_words">AvailableKeyWords</link> &gt; <link linkend="_class_file_sorting_wiz_1_1_meta_info_field_1a335023d565997807042603189ddbf0d5">availableKeyWords</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00057">57</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_file_sorting_wiz_1_1_meta_info_field_1a335023d565997807042603189ddbf0d5"/><section>
+    <title>availableKeyWords</title>
+<indexterm><primary>availableKeyWords</primary><secondary>FileSortingWiz.MetaInfoField</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.MetaInfoField</primary><secondary>availableKeyWords</secondary></indexterm>
+<para><computeroutput>Dictionary&lt;String, <link linkend="_class_file_sorting_wiz_1_1_available_key_words">AvailableKeyWords</link>&gt; FileSortingWiz.MetaInfoField.availableKeyWords<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__rule_file_8cs_source_1l00060">60</link> of file <link linkend="__rule_file_8cs_source">RuleFile.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/FileSortingWiz/<link linkend="__rule_file_8cs">RuleFile.cs</link></section>
+</section>
