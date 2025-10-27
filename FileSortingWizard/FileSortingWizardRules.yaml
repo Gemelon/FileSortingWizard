@@ -1,0 +1,55 @@
+﻿
+
+dataBasePath: "..\\FileSortingWizardDatabase"
+dataBaseFileName: FileSortingWizardDatabase.db
+mediaRootPath: "..\\FileSortingWizardTestMedia"
+videoRootPath: "..\\FileSortingWizardTestMedia\\Videos"
+imageRootPath: "..\\FileSortingWizardTestMedia\\Images"
+documentRootPath: "..\\FileSortingWizardTestMedia\\Documents"
+musicRootPath: "..\\FileSortingWizardTestMedia\\Music"
+
+
+metaInfoField:
+  .JPG:
+    availableKeyWords:
+      FileName:
+        dataType: STRING
+        source: FILEINFO
+        valAttribute: title
+        keyWords:
+        - Name
+
+      FilePath:
+        dataType: STRING
+        source: FILEINFO
+        valAttribute: path
+        keyWords:
+        - DirectoryName
+
+  .ARW:
+    availableKeyWords:
+      Make:
+        dataType: STRING
+        source: EXIF
+        valAttribute: make
+        keyWords:
+        - CameraMake
+      Model:
+        dataType: STRING
+        source: EXIF
+        valAttribute: model
+        keyWords:
+        - CameraModel
+
+fileRules:
+  .JPG:
+    category: Image
+    rootPath: "{MediaRootPath}"
+    sortingPatern: "{MetaCreationTime.Year}\\{MetaCreationTime.Month}\\{MetaCreationTime.Day}/{Make}/{Model}"
+    fileNamePatern: "{MetaCreationTime.Year}-{MetaCreationTime.Month}-{MetaCreationTime.Day}-{FileName.Noext}.JPG"
+
+  .ARW:
+    category: Image
+    rootPath: "{MediaRootPath}"
+    sortingPatern: "{MetaCreationTime.Year}\\{MetaCreationTime.Month}\\{MetaCreationTime.Day}/{Make}/{Model}"
+    fileNamePatern: "{MetaCreationTime.Year}-{MetaCreationTime.Month}-{MetaCreationTime.Day}-{FileName.Noext}.JPG"

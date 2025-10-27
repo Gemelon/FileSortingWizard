@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FileSortingWizard": {
+      "commandName": "Project",
+      "commandLineArgs": "collect --rules \"D:\\Projekte\\Projekte_2025\\GitHub\\FileSortingWizard\\FileSortingWizard\\FileSortingWizardRules.yaml\" --input \"D:\\Projekte\\Projekte_2025\\GitHub\\FileSortingWizardTestMedia\""
+    }
+  }
+}
