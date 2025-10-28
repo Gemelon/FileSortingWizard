@@ -12,6 +12,10 @@
         <itemizedlist>
             <listitem><para>void <link linkend="_class_file_sorting_wiz_1_1_wizard_1ac99030116aeccc5f1ce41c0dd15e80cf">CollectFileData</link> (string ruleFileName, string inputDirectory, string outputDirectory, bool silent)</para>
 </listitem>
+            <listitem><para>void <link linkend="_class_file_sorting_wiz_1_1_wizard_1a99b8cd92a5cfb3b3d8c472d87f3477db">ExecuteCopy</link> (string v1, string v2)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_file_sorting_wiz_1_1_wizard_1a9e7991d459d3e4e7b7910a0bf6f2ed1a">ExecuteMove</link> (string v1, string v2)</para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <section>
@@ -23,7 +27,7 @@
 
 <para>The <link linkend="_class_file_sorting_wiz_1_1_wizard">Wizard</link> class provides functionality to initialize components and collect file data based on a specified rule file and directory paths. It is designed to handle operations related to rule file deserialization and logging.</para>
 <para>
-Definition at line <link linkend="__wizard_8cs_source_1l00039">39</link> of file <link linkend="__wizard_8cs_source">Wizard.cs</link>.</para>
+Definition at line <link linkend="__wizard_8cs_source_1l00045">45</link> of file <link linkend="__wizard_8cs_source">Wizard.cs</link>.</para>
 </section>
 <section>
 <title>Member Function Documentation</title>
@@ -32,7 +36,21 @@ Definition at line <link linkend="__wizard_8cs_source_1l00039">39</link> of file
 <indexterm><primary>CollectFileData</primary><secondary>FileSortingWiz.Wizard</secondary></indexterm>
 <indexterm><primary>FileSortingWiz.Wizard</primary><secondary>CollectFileData</secondary></indexterm>
 <para><computeroutput>void FileSortingWiz.Wizard.CollectFileData (string ruleFileName, string inputDirectory, string outputDirectory, bool silent)</computeroutput></para><para>
-Definition at line <link linkend="__wizard_8cs_source_1l00061">61</link> of file <link linkend="__wizard_8cs_source">Wizard.cs</link>.</para>
+Definition at line <link linkend="__wizard_8cs_source_1l00087">87</link> of file <link linkend="__wizard_8cs_source">Wizard.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_wizard_1a99b8cd92a5cfb3b3d8c472d87f3477db"/><section>
+    <title>ExecuteCopy()</title>
+<indexterm><primary>ExecuteCopy</primary><secondary>FileSortingWiz.Wizard</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Wizard</primary><secondary>ExecuteCopy</secondary></indexterm>
+<para><computeroutput>void FileSortingWiz.Wizard.ExecuteCopy (string v1, string v2)</computeroutput></para><para>
+Definition at line <link linkend="__wizard_8cs_source_1l00297">297</link> of file <link linkend="__wizard_8cs_source">Wizard.cs</link>.</para>
+</section>
+<anchor xml:id="_class_file_sorting_wiz_1_1_wizard_1a9e7991d459d3e4e7b7910a0bf6f2ed1a"/><section>
+    <title>ExecuteMove()</title>
+<indexterm><primary>ExecuteMove</primary><secondary>FileSortingWiz.Wizard</secondary></indexterm>
+<indexterm><primary>FileSortingWiz.Wizard</primary><secondary>ExecuteMove</secondary></indexterm>
+<para><computeroutput>void FileSortingWiz.Wizard.ExecuteMove (string v1, string v2)</computeroutput></para><para>
+Definition at line <link linkend="__wizard_8cs_source_1l00302">302</link> of file <link linkend="__wizard_8cs_source">Wizard.cs</link>.</para>
 </section>
 <para>
 The documentation for this class was generated from the following file:</para>

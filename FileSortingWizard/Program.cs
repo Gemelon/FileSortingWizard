@@ -27,7 +27,7 @@
  * A file sorting wizard to organize your files based on customizable rules.
  ********************************************************************************/
 
-using FileSortingWiz;
+using FSWApi;
 using System.CommandLine;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using Command = System.CommandLine.Command;
@@ -37,13 +37,14 @@ namespace FileSortingWizard
 	internal class Program
 	{
 		private static Wizard wizard = new Wizard();
+		private static Lib _lib = new Lib();
 
 		static int Main(string[] args)
 		{
 			RootCommand rootCommand = new RootCommand("TSFileWizard - A tool to sort files on the HDD");
 			Command copyCommand = new Command("copy", "copyies the files to the output directory");
 			Command moveCommand = new Command("move", "moves the files to the output directory)");
-			//Command executeCommand = new Command("execute", "Execute the rule file (Collection and Sorting)");
+			Command processCommand = new Command("execute", "Execute the rule file (Collection and Sorting)");
 			Command collectCommand = new Command("collect", "Execute the collection of file informations in to the database");
 			Command sortCommand = new Command("sort", "Executes the file sorting");
 
@@ -94,14 +95,13 @@ namespace FileSortingWizard
 				ExecuteMove(ruleFileName, outputDirectory, silent);
 			});
 
-			//executeCommand.SetAction(parseResult =>
-			//{
-			//	string? ruleFileName = parseResult.GetValue<string>("--rules");
-			//	string? inputDirectory = parseResult.GetValue<string>("--input");
-			//	string? outputDirectory = parseResult.GetValue<string>("--output");
-			//	bool? silent = parseResult.GetValue<bool>("--silent");
-			//	ExecuteRules(ruleFileName, inputDirectory, outputDirectory, silent);
-			//});
+			processCommand.SetAction(parseResult =>
+			{
+				string? ruleFileName = parseResult.GetValue<string>("--rules");
+				string? outputDirectory = parseResult.GetValue<string>("--output");
+				bool? silent = parseResult.GetValue<bool>("--silent");
+				ExecuteProcess(ruleFileName, outputDirectory, silent);
+			});
 
 			collectCommand.SetAction(parseResult =>
 			{
@@ -131,15 +131,15 @@ namespace FileSortingWizard
 			moveCommand.Add(silentOption);
 			rootCommand.Add(moveCommand);
 
-			//executeCommand.Add(rulesFileOption);
-			//executeCommand.Add(inputDirectoryOption);
-			//executeCommand.Add(outputDirectoryOption);
-			//executeCommand.Add(silentOption);
-			//rootCommand.Add(executeCommand);
+			processCommand.Add(rulesFileOption);
+			processCommand.Add(inputDirectoryOption);
+			processCommand.Add(outputDirectoryOption);
+			processCommand.Add(silentOption);
+			rootCommand.Add(processCommand);
 
 			collectCommand.Add(rulesFileOption);
 			collectCommand.Add(inputDirectoryOption);
-			collectCommand.Add(outputDirectoryOption);
+			//collectCommand.Add(outputDirectoryOption);
 			collectCommand.Add(silentOption);
 			rootCommand.Add(collectCommand);
 
@@ -155,22 +155,76 @@ namespace FileSortingWizard
 		}
 		private static void ExecuteCopy(string? ruleFileName, string? outputDirectory, bool? silent)
 		{
-			wizard.ExecuteCopy(ruleFileName ?? string.Empty, outputDirectory ?? string.Empty);
+			//wizard.ExecuteCopy(ruleFileName ?? string.Empty, outputDirectory ?? string.Empty);
 		}
 
 		private static void ExecuteMove(string? ruleFileName, string? outputDirectory, bool? silent)
 		{
-			wizard.ExecuteMove(ruleFileName ?? string.Empty, outputDirectory ?? string.Empty);
+			//wizard.ExecuteMove(ruleFileName ?? string.Empty, outputDirectory ?? string.Empty);
 		}
 
-		//private static void ExecuteRules(string? ruleFileName, string? inputDirectory, string? outputDirectory, bool? silent)
-		//{
-		//	//wizard.ExecuteRules(ruleFileName ?? string.Empty, inputDirectory ?? string.Empty, outputDirectory ?? string.Empty);
-		//}
+		private static void ExecuteProcess(string? ruleFileName, string? outputDirectory, bool? silent)
+		{
+			//wizard.ExecuteProcess(ruleFileName ?? string.Empty, outputDirectory ?? string.Empty);
+		}
 
 		private static void ExecuteCollection(string? ruleFileName, string? inputDirectory, string? outputDirectory, bool? silent)
 		{
-			wizard.CollectFileData(ruleFileName ?? string.Empty, inputDirectory ?? string.Empty, outputDirectory ?? string.Empty, silent ?? false);
+			// Initialize log file
+			_lib.ResetLog();
+
+			wizard.GetherInformationsStarted += (sender, e) =>
+			{
+				_lib.WriteMessage($"Start gathering informations with Rule File:", "green", silent);
+				_lib.WriteMessage($"{((Wizard.GetherInformationsStartedEventArgs)e).RuleFileName}", "yellow", silent);
+				_lib.WriteMessage($"from the Input Directory:", "green", silent);
+				_lib.WriteMessage($"{((Wizard.GetherInformationsStartedEventArgs)e).InputDirectory}", "yellow", silent);
+				_lib.WriteMessage($"with {((Wizard.GetherInformationsStartedEventArgs)e).DirectorysLength} files.", "green", silent);
+			};
+
+			wizard.DataBaseCreated += (sender, e) =>
+			{
+				var args = (Wizard.DataBaseCreatedEventArgs)e;
+				_lib.WriteMessage($"Database created: {args.DataBaseFileName}", "green", silent);
+			};
+
+			wizard.SkippingEmptyFilePath += (sender, e) =>
+			{
+				_lib.WriteMessage("Skipping empty file path.", "red", silent);
+			};
+
+			wizard.FileNotExists += (sender, e) =>
+			{
+				_lib.WriteMessage("File does not exist.", "red", silent);
+			};
+
+			wizard.FileProcessed += (sender, e) =>
+			{
+				var args = (Wizard.FileProcessedEventArgs)e;
+				_lib.WriteMessage($"Processed file {args.FileCount}: {args.FileName} ({args.FileSize} bytes)", "cyan", silent);
+			};
+
+			wizard.GetherInformationsFinished += (sender, e) =>
+			{
+				var args = (Wizard.GetherInformationsFinishedEventArgs)e;
+				_lib.WriteMessage("\n======================================", "gold3", false);
+				_lib.WriteMessage($"Finished gathering informations.", "green", silent);
+				_lib.WriteMessage($"{args.FileCount - 1} files processed.", false);
+				_lib.WriteMessage($"\nNo metadata rules defined for ", silent);
+				foreach (var ext in args.NoMetadataRule)
+				{
+					_lib.WriteMessage($" {ext} ", "yellow", silent);
+				}
+
+			};
+
+			wizard.UnknownDataType += (sender, e) =>
+			{
+				var args = (Wizard.UnknownDataTypeEventArgs)e;
+				_lib.WriteMessage($"Unknown data type: {args.DataType}", "red", silent);
+			};
+
+			wizard.GetherInformations(ruleFileName ?? string.Empty, inputDirectory ?? string.Empty);
 		}
 
 		private static void ExecuteSorting(string? ruleFileName, string? inputDirectory, string? outputDirectory, bool? silent)

@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FileSortingWiz\FileSortingWiz.csproj" />
+    <ProjectReference Include="..\FSWApi\FSWApi.csproj" />
   </ItemGroup>
 
 </Project>

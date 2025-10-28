@@ -31,7 +31,7 @@ using Microsoft.VisualBasic.FileIO;
 using Spectre.Console;
 using System.Text;
 
-namespace FileSortingWiz
+namespace FSWApi
 {
 	/// <summary>
 	/// Provides utility methods for writing messages to a log file, optionally displaying them in the console, and
@@ -39,7 +39,7 @@ namespace FileSortingWiz
 	/// </summary>
 	/// <remarks>This class includes methods for logging messages with optional console output, resetting the
 	/// log file, and replacing characters in a string with a specified maximum replacement count.</remarks>
-	internal class Lib
+	public class Lib
 	{
 		private string _logFileName = null;
 
@@ -122,6 +122,16 @@ namespace FileSortingWiz
 			{
 				File.Delete(LogFilePath + "\\" + LogFileName);
 			}
+		}
+
+		/// <summary>
+		/// Resets the log file to its default state.
+		/// </summary>
+		/// <remarks>This method clears the contents of the log file and resets it to the default file name,
+		/// "FileSortingWizard.log". Use this method to ensure the log file starts fresh with no previous entries.</remarks>
+		public void ResetLog()
+		{
+			ResetLog("FileSortingWizard.log");
 		}
 
 		/// <summary>

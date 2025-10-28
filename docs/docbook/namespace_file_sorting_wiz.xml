@@ -5,9 +5,17 @@
 <simplesect>
     <title>Classes    </title>
         <itemizedlist>
+            <listitem><para>class <emphasis role="strong">FileMetaInfo</emphasis></para>
+</listitem>
+            <listitem><para>class <emphasis role="strong">TSFileWizContext</emphasis></para>
+</listitem>
+            <listitem><para>class <emphasis role="strong">DataBase</emphasis></para>
+</listitem>
             <listitem><para>class <emphasis role="strong">Lib</emphasis></para>
 
 <para>Provides utility methods for writing messages to a log file, optionally displaying them in the console, and performing string manipulations. </para>
+</listitem>
+            <listitem><para>class <emphasis role="strong">PaternInterpreter</emphasis></para>
 </listitem>
             <listitem><para>class <link linkend="_class_file_sorting_wiz_1_1_rule">Rule</link></para>
 

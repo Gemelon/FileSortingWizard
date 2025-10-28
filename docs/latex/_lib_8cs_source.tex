@@ -35,67 +35,92 @@
 \DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }Spectre.Console;}
 \DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }System.Text;}
 \DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00034}\mbox{\hyperlink{namespace_file_sorting_wiz}{00034}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_file_sorting_wiz}{FileSortingWiz}}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00034}00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_file_sorting_wiz}{FileSortingWiz}}}
 \DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00035}00035\ \{}
 \DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{class\ }Lib}
 \DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00043}00043\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ WriteMessage(\textcolor{keywordtype}{string}\ message,\ \textcolor{keywordtype}{string}\ color,\ \textcolor{keywordtype}{bool}?\ silent)}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ \_logFileName\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ LogFileName}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \_logFileName;\ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ \_logFileName\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ \_logFilePath\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ LogFilePath}
 \DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (silent\ ==\ \textcolor{keyword}{false})}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Console.WriteLine(message);}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AnsiConsole.MarkupLine(\$\textcolor{stringliteral}{"{}[\{color\}]\{message\}[/]"{}});}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//string\ path\ =\ "{}D:\(\backslash\)\(\backslash\)Projekte\(\backslash\)\(\backslash\)Projekte\_2025\(\backslash\)\(\backslash\)TSFileWizard\(\backslash\)\(\backslash\)TSFileWizard.log"{};}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Directory.Exists(SpecialDirectories.MyDocuments\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)TSFileWizard"{}}))}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Directory.CreateDirectory(SpecialDirectories.MyDocuments\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)TSFileWizard"{}});}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ path\ =\ SpecialDirectories.MyDocuments\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)TSFileWizard\(\backslash\)\(\backslash\)TSFileWizard.log"{}};}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (TextWriter\ writer\ =\ \textcolor{keyword}{new}\ StreamWriter(path,\ \textcolor{keyword}{true},\ Encoding.UTF8))}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ writer.WriteLine(\$\textcolor{stringliteral}{"{}\{DateTime.Now:yyyy-\/MM-\/dd\ HH:mm:ss\}\ -\/\ \{message\}"{}});}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ WriteMessage(\textcolor{keywordtype}{string}\ message,\ \textcolor{keywordtype}{bool}?\ silent)}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ WriteMessage(message,\ \textcolor{stringliteral}{"{}green"{}},\ silent);}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ResetLog(\textcolor{keywordtype}{string}\ logFileName)}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ path\ =\ SpecialDirectories.MyDocuments\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)TSFileWizard\(\backslash\)\(\backslash\)"{}}\ +\ logFileName;}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00092}00092\ }
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Directory.Exists(SpecialDirectories.MyDocuments\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)TSFileWizard"{}}))}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Directory.CreateDirectory(SpecialDirectories.MyDocuments\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)TSFileWizard"{}});}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ \{\ \textcolor{keywordflow}{return}\ \_logFilePath;\ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ \_logFilePath\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ WriteMessage(\textcolor{keywordtype}{string}\ message,\ \textcolor{keywordtype}{string}\ color,\ \textcolor{keywordtype}{bool}?\ silent)}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LogFileName\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ InvalidOperationException(\textcolor{stringliteral}{"{}Log\ file\ name\ is\ not\ set.\ Please\ set\ the\ log\ file\ name\ before\ writing\ messages."{}});}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LogFilePath\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ InvalidOperationException(\textcolor{stringliteral}{"{}Log\ file\ path\ is\ not\ set.\ Please\ set\ the\ log\ file\ path\ before\ writing\ messages."{}});}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (silent\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AnsiConsole.MarkupLine(\$\textcolor{stringliteral}{"{}[\{color\}]\{message\}[/]"{}});}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Directory.Exists(LogFilePath))}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Directory.CreateDirectory(LogFilePath);}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (TextWriter\ writer\ =\ \textcolor{keyword}{new}\ StreamWriter(LogFilePath\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}\ +\ LogFileName,\ \textcolor{keyword}{true},\ Encoding.UTF8))}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ writer.WriteLine(\$\textcolor{stringliteral}{"{}\{DateTime.Now:yyyy-\/MM-\/dd\ HH:mm:ss\}\ -\/\ \{message\}"{}});}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Exists(path))}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ File.Delete(path);}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00101}00101\ }
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ StringReplace(\textcolor{keywordtype}{string}\ input,\ \textcolor{keywordtype}{char}\ oldChar,\ \textcolor{keywordtype}{char}\ newChar,\ \textcolor{keywordtype}{int}\ MaxCount)}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ newString\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ charCount\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00119}00119\ }
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{char}\ c\ \textcolor{keywordflow}{in}\ input)}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ ==\ oldChar\ \&\&\ charCount\ <\ MaxCount)}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newString\ +=\ newChar;}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charCount++;}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newString\ +=\ c;}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00132}00132\ }
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newString;}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00135}00135\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00136}00136\ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ WriteMessage(\textcolor{keywordtype}{string}\ message,\ \textcolor{keywordtype}{bool}?\ silent)}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ WriteMessage(message,\ \textcolor{stringliteral}{"{}green"{}},\ silent);}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ResetLog(\textcolor{keywordtype}{string}\ logFileName)}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ LogFileName\ =\ logFileName;}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ LogFilePath\ =\ SpecialDirectories.MyDocuments\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)FileSortingWizard"{}};}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Directory.Exists(LogFilePath))}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Directory.CreateDirectory(LogFilePath);}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Exists(LogFilePath\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}\ +\ LogFileName))}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ File.Delete(LogFilePath\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}\ +\ LogFileName);}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ StringReplace(\textcolor{keywordtype}{string}\ input,\ \textcolor{keywordtype}{char}\ oldChar,\ \textcolor{keywordtype}{char}\ newChar,\ \textcolor{keywordtype}{int}\ MaxCount)}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ newString\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ charCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{char}\ c\ \textcolor{keywordflow}{in}\ input)}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ ==\ oldChar\ \&\&\ charCount\ <\ MaxCount)}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newString\ +=\ newChar;}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charCount++;}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newString\ +=\ c;}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newString;}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00160}00160\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_lib_8cs_source_l00161}00161\ \}}
 
 \end{DoxyCode}

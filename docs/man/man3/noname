@@ -8,7 +8,7 @@ Debug net8\&.0 \&.NETCoreApp,Version=v8\&.0\&.AssemblyAttributes\&.cs FileSortin
 .PP
 FileSortingWiz obj Debug net8\&.0 \&.NETCoreApp,Version=v8\&.0\&.AssemblyAttributes\&.cs FileSortingWiz\&.AssemblyInfo\&.cs FileSortingWiz\&.GlobalUsings\&.g\&.cs 
 .PP
-Lib\&.cs RuleFile\&.cs Wizard\&.cs 
+DataBase\&.cs Lib\&.cs PaternInterpreter\&.cs RuleFile\&.cs Wizard\&.cs 
 .PP
 FileSortingWizard Manual obj Debug net8\&.0 \&.NETCoreApp,Version=v8\&.0\&.AssemblyAttributes\&.cs FileSortingWizard\&.AssemblyInfo\&.cs FileSortingWizard\&.GlobalUsings\&.g\&.cs 
 .PP

@@ -31,7 +31,7 @@ using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
 
 
-namespace FileSortingWiz
+namespace FSWApi
 {
     /// <summary>
     /// Represents a set of rules and configurations for managing file paths, metadata, and file-specific rules.

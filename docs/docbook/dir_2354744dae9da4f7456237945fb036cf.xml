@@ -12,7 +12,11 @@
 <simplesect>
     <title>Files    </title>
         <itemizedlist>
+            <listitem><para>file <link linkend="__data_base_8cs">DataBase.cs</link></para>
+</listitem>
             <listitem><para>file <link linkend="__lib_8cs">Lib.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__patern_interpreter_8cs">PaternInterpreter.cs</link></para>
 </listitem>
             <listitem><para>file <link linkend="__rule_file_8cs">RuleFile.cs</link></para>
 </listitem>

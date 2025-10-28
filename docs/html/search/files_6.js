@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wizard_2ecs_0',['Wizard.cs',['../_wizard_8cs.html',1,'']]]
+  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['rulefile_2ecs_1',['RuleFile.cs',['../_rule_file_8cs.html',1,'']]]
 ];

@@ -32,37 +32,269 @@
 \DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00028}00028\ \textcolor{comment}{\ *\ A\ file\ sorting\ wizard\ to\ organize\ your\ files\ based\ on\ customizable\ rules.}}
 \DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00029}00029\ \textcolor{comment}{\ ********************************************************************************/}}
 \DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00031}00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_file_sorting_wiz}{FileSortingWiz}}}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00032}00032\ \{}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00039}\mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard}{Wizard}}}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00040}00040\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ Lib\ \_lib;}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_file_sorting_wiz_1_1_rule_file}{RuleFile}}\ \_ruleFile;}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ TextReader\ \_ruleFileReader;}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \_silent;}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ \_dataBaseFileName;}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \_fileCount;}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ InitializeComponents(\textcolor{keywordtype}{string}\ ruleFileName)}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \_ruleFile\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_file_sorting_wiz_1_1_rule_file}{RuleFile}}();}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \_lib\ =\ \textcolor{keyword}{new}\ Lib();}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \_ruleFile.Deserialize(ruleFileName);}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.ResetLog(\_ruleFile.rule.logFileName);}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \_dataBaseFileName\ =\ Path.GetFullPath(\_ruleFile.rule.DataBasePath\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}\ +\ \_ruleFile.rule.DataBaseFileName);}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.WriteMessage(\$\textcolor{stringliteral}{"{}DataBase\ path:\ \{\_dataBaseFileName\}"{}},\ \_silent);}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00061}\mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard_ac99030116aeccc5f1ce41c0dd15e80cf}{00061}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard_ac99030116aeccc5f1ce41c0dd15e80cf}{CollectFileData}}(\textcolor{keywordtype}{string}\ ruleFileName,\ \textcolor{keywordtype}{string}\ inputDirectory,\ \textcolor{keywordtype}{string}\ outputDirectory,\ \textcolor{keywordtype}{bool}\ silent)}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \_silent\ =\ silent;}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ InitializeComponents(ruleFileName);}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00067}00067\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00031}00031\ \textcolor{keyword}{using\ }SharpExifTool;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00032}00032\ \textcolor{keyword}{using\ }Spectre.Console;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00033}00033\ \textcolor{keyword}{using\ }System.Globalization;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00034}00034\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00035}00035\ \textcolor{keyword}{using\ }YamlDotNet.Core.Tokens;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00037}00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_file_sorting_wiz}{FileSortingWiz}}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00045}\mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard}{00045}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard}{Wizard}}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00046}00046\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ Lib?\ \_lib;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{class_file_sorting_wiz_1_1_rule_file}{RuleFile}}?\ \_ruleFile;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ DataBase?\ \_database;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ TextReader?\ \_ruleFileReader;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \_silent;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}?\ \_dataBaseFileName;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \_fileCount;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ InitializeComponents(\textcolor{keywordtype}{string}\ ruleFileName)}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ <exception\ cref="{}ArgumentNullException"{}>Thrown\ when\ <paramref\ name="{}ruleFileName"{}/>\ is\ null.</exception>}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ruleFileName\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(nameof(ruleFileName));}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \_ruleFile\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_file_sorting_wiz_1_1_rule_file}{RuleFile}}();}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \_lib\ =\ \textcolor{keyword}{new}\ Lib();}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \_database\ =\ \textcolor{keyword}{new}\ DataBase();}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Deserialize\ rule\ file}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \_ruleFile.Deserialize(ruleFileName);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ log\ file}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.ResetLog(\_ruleFile.rule.logFileName);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Initialize\ database}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \_dataBaseFileName\ =\ Path.GetFullPath(\_ruleFile.rule.DataBasePath\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}\ +\ \_ruleFile.rule.DataBaseFileName);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.WriteMessage(\$\textcolor{stringliteral}{"{}DataBase\ path:\ \{\_dataBaseFileName\}"{}},\ \_silent);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \_database.InitializeDataBase(\_dataBaseFileName);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00087}\mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard_ac99030116aeccc5f1ce41c0dd15e80cf}{00087}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard_ac99030116aeccc5f1ce41c0dd15e80cf}{CollectFileData}}(\textcolor{keywordtype}{string}\ ruleFileName,\ \textcolor{keywordtype}{string}\ inputDirectory,\ \textcolor{keywordtype}{string}\ outputDirectory,\ \textcolor{keywordtype}{bool}\ silent)}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ ExifTool\ exifTool\ =\ \textcolor{keyword}{new}\ SharpExifTool.ExifTool();}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ FileMetaInfo\ fileMetaInfo\ =\ \textcolor{keyword}{new}\ FileMetaInfo();}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ List<string>\ NoMetadataRule\ =\ \textcolor{keyword}{new}\ List<string>();}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ PropertyInfo\ propertyInfo;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ DateTime\ currentDateTimeValue\ =\ DateTime.MinValue;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ var\ value\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ lastField\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \_silent\ =\ silent;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ InitializeComponents(ruleFileName);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}[]\ directories\ =\ Directory.GetFiles(inputDirectory,\ \textcolor{stringliteral}{"{}*"{}},\ SearchOption.AllDirectories);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ Array.Sort(directories);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.WriteMessage(\$\textcolor{stringliteral}{"{}Collecting\ file\ data\ from\ \{inputDirectory\}\ with\ \{directories.Length\}\ files."{}},\ silent);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \_fileCount\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.WriteMessage(\textcolor{stringliteral}{"{}\(\backslash\)n"{}},\ silent);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ AnsiConsole.Progress()}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .AutoClear(\textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Columns(\textcolor{keyword}{new}\ ProgressColumn[]}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ TaskDescriptionColumn(),\ \ \ \ \textcolor{comment}{//\ Task\ description}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ ProgressBarColumn(),\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Progress\ bar}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ PercentageColumn(),\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Percentage}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ SpinnerColumn(),\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Spinner}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Start(ctx\ =>}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ task\ =\ ctx.AddTask(\textcolor{stringliteral}{"{}[green]Processing\ files...[/]"{}});}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ task.MaxValue(directories.Length);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{string}\ dirString\ \textcolor{keywordflow}{in}\ directories)}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_lib.WriteMessage(\$"{}File\ \{dirString\}\ processed."{},\ silent);}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ task.Increment(1);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dirString\ !=\ \textcolor{keyword}{null}\ \&\&\ dirString.Length\ ==\ 0\ \&\&\ dirString\ !=\ \textcolor{keywordtype}{string}.Empty\ \&\&\ dirString\ !=\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.WriteMessage(\textcolor{stringliteral}{"{}Skipping\ empty\ file\ path."{}},\ \textcolor{stringliteral}{"{}red"{}},\ silent);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!File.Exists(dirString))}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.WriteMessage(\$\textcolor{stringliteral}{"{}File\ does\ not\ exist:\ \{dirString\}"{}},\ \textcolor{stringliteral}{"{}red"{}},\ silent);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FileInfo\ fileInfo\ =\ \textcolor{keyword}{new}\ FileInfo(dirString);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ICollection<KeyValuePair<string,\ string>>\ exifData\ =\ exifTool.ExtractAllMetadata(dirString);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Dictionary<string,\ string>\ exifDataDictionary\ =\ exifData.ToDictionary();}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_ruleFile.rule.metaInfoField.ContainsKey(fileInfo.Extension.ToUpperInvariant()))}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!NoMetadataRule.Contains(fileInfo.Extension.ToUpperInvariant()))}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NoMetadataRule.Add(fileInfo.Extension.ToUpperInvariant());}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_file_sorting_wiz_1_1_meta_info_field}{MetaInfoField}}\ metaInfoField\ =\ \_ruleFile.rule.metaInfoField[fileInfo.Extension.ToUpperInvariant()];}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ All\ schlüsselwürter\ für\ diesen\ Dateityp\ durchgehen\ und}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ die\ werte\ holen\ und\ in\ die\ datenbank\ schreiben}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ field\ \textcolor{keywordflow}{in}\ metaInfoField.availableKeyWords)}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lastField\ !=\ field.Key)}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lastField\ =\ field.Key;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentDateTimeValue\ =\ fileInfo.CreationTime;\ \textcolor{comment}{//\ Reset\ currentDateTimeValue\ for\ each\ new\ field}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ keyword\ \textcolor{keywordflow}{in}\ field.Value.KeyWords)}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (field.Value.Source\ ==\ \textcolor{stringliteral}{"{}EXIFTOOL"{}})}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!exifDataDictionary.TryGetValue(keyword,\ out\ value))}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_lib.WriteMessage(\$"{}Keyword\ '\{keyword\}'\ not\ found\ in\ EXIF\ data\ for\ file\ \{fileInfo.Name\}."{},\ silent);}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field.Value.Source\ ==\ \textcolor{stringliteral}{"{}FILEINFO"{}})}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!fileInfo.GetType().GetProperty(keyword)?.CanRead\ ??\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_lib.WriteMessage(\$"{}Keyword\ '\{keyword\}'\ not\ found\ in\ FileInfo\ for\ file\ \{fileInfo.Name\}."{},\ silent);}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\ =\ fileInfo.GetType().GetProperty(keyword)?.GetValue(fileInfo)?.ToString()\ ??\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\_lib.WriteMessage(\$"{}Unknown\ source\ '\{field.Value.Source\}'\ for\ keyword\ '\{keyword\}'."{},\ silent);}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (field.Value.DataType.ToUpperInvariant())}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}STRING"{}}:}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyInfo\ =\ fileMetaInfo.GetType().GetProperty(field.Key);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyInfo.SetValue(fileMetaInfo,\ value,\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}INT"{}}:}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{int}.TryParse(value,\ out\ \textcolor{keywordtype}{int}\ intValue))}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyInfo\ =\ fileMetaInfo.GetType().GetProperty(field.Key);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyInfo.SetValue(fileMetaInfo,\ intValue,\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}LONG"{}}:}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{long}.TryParse(value,\ out\ \textcolor{keywordtype}{long}\ longValue))}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyInfo\ =\ fileMetaInfo.GetType().GetProperty(field.Key);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyInfo.SetValue(fileMetaInfo,\ longValue,\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}DOUBLE"{}}:}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{double}.TryParse(value,\ out\ \textcolor{keywordtype}{double}\ doubleValue))}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyInfo\ =\ fileMetaInfo.GetType().GetProperty(field.Key);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyInfo.SetValue(fileMetaInfo,\ doubleValue,\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}BOOLEAN"{}}:}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{bool}.TryParse(value,\ out\ \textcolor{keywordtype}{bool}\ boolValue))}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyInfo\ =\ fileMetaInfo.GetType().GetProperty(field.Key);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyInfo.SetValue(fileMetaInfo,\ boolValue,\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}DATETIME"{}}:}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CultureInfo\ enUS\ =\ \textcolor{keyword}{new}\ CultureInfo(\textcolor{stringliteral}{"{}en-\/US"{}});}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ DateTime\ dateTimeValue;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (DateTime.TryParseExact(value,\ \textcolor{stringliteral}{"{}dd.MM.yyyy\ HH:mm:ss"{}},\ \textcolor{keyword}{new}\ CultureInfo(\textcolor{stringliteral}{"{}de-\/DE"{}}),\ DateTimeStyles.None,\ out\ dateTimeValue))\ ||}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (DateTime.TryParseExact(value,\ \textcolor{stringliteral}{"{}yyyy:MM:dd\ HH:mm:ss"{}},\ \textcolor{keyword}{null},\ DateTimeStyles.None,\ out\ dateTimeValue))\ ||}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (DateTime.TryParseExact(value,\ \textcolor{stringliteral}{"{}yyyy:MM:dd\ HH:mm:sszzz"{}},\ \textcolor{keyword}{null},\ DateTimeStyles.None,\ out\ dateTimeValue))\ ||}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (DateTime.TryParseExact(value,\ \textcolor{stringliteral}{"{}yyyy:MM:dd"{}},\ \textcolor{keyword}{null},\ DateTimeStyles.None,\ out\ dateTimeValue))}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (field.Value.ValAttribute\ ==\ \textcolor{stringliteral}{"{}LOWEST"{}}\ \&\&\ dateTimeValue\ <\ currentDateTimeValue)}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentDateTimeValue\ =\ dateTimeValue;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field.Value.ValAttribute\ ==\ \textcolor{stringliteral}{"{}HIGHEST"{}}\ \&\&\ dateTimeValue\ >\ currentDateTimeValue)}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentDateTimeValue\ =\ dateTimeValue;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentDateTimeValue\ =\ dateTimeValue;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyInfo\ =\ fileMetaInfo.GetType().GetProperty(field.Key);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ propertyInfo.SetValue(fileMetaInfo,\ currentDateTimeValue,\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.WriteMessage(\$\textcolor{stringliteral}{"{}Unknown\ data\ type:\ \{field.Value.DataType\}"{}},\ \textcolor{stringliteral}{"{}red"{}},\ silent);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00263}00263\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PaternInterpreter\ paternInterpreter\ =\ \textcolor{keyword}{new}\ PaternInterpreter();}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Die\ Regeln\ für\ diesen\ Dateityp\ holen}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_file_sorting_wiz_1_1_file_rules}{FileRules}}\ fileRules\ =\ \_ruleFile.rule.fileRules[fileInfo.Extension.ToUpperInvariant()];}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sortingPath\ =\ paternInterpreter.PaternParser(paternInterpreter.PaternLexer(fileRules.\mbox{\hyperlink{class_file_sorting_wiz_1_1_file_rules_a44429075c3e657f13b5f30a06ab5fbb8}{SortingPatern}}),\ fileMetaInfo);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ newFileName\ =\ paternInterpreter.PaternParser(paternInterpreter.PaternLexer(fileRules.\mbox{\hyperlink{class_file_sorting_wiz_1_1_file_rules_aeb9e3a896f2aeb5b3bb2ae35c58c546f}{FileNamePatern}}),\ fileMetaInfo);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fileRules.\mbox{\hyperlink{class_file_sorting_wiz_1_1_file_rules_a53db08a3e8d8860b9199c814405bdfc6}{RootPath}}\ !=\ \textcolor{keyword}{null}\ \&\&\ fileRules.\mbox{\hyperlink{class_file_sorting_wiz_1_1_file_rules_a53db08a3e8d8860b9199c814405bdfc6}{RootPath}}\ !=\ \textcolor{keywordtype}{string}.Empty)}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fileRules.\mbox{\hyperlink{class_file_sorting_wiz_1_1_file_rules_a53db08a3e8d8860b9199c814405bdfc6}{RootPath}}\ ==\ \textcolor{stringliteral}{"{}\{MediaRootPath\}"{}})}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fileRules.RootPath\ =\ \_ruleFile.rule.MediaRootPath;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fileRules.\mbox{\hyperlink{class_file_sorting_wiz_1_1_file_rules_a53db08a3e8d8860b9199c814405bdfc6}{RootPath}}.EndsWith(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}})\ ||\ fileRules.\mbox{\hyperlink{class_file_sorting_wiz_1_1_file_rules_a53db08a3e8d8860b9199c814405bdfc6}{RootPath}}.EndsWith(\textcolor{stringliteral}{"{}/"{}}))}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fileMetaInfo.NewFilePath\ =\ Path.GetFullPath(fileRules.\mbox{\hyperlink{class_file_sorting_wiz_1_1_file_rules_a53db08a3e8d8860b9199c814405bdfc6}{RootPath}}\ +\ sortingPath\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}\ +\ newFileName);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fileMetaInfo.NewFilePath\ =\ Path.GetFullPath(fileRules.\mbox{\hyperlink{class_file_sorting_wiz_1_1_file_rules_a53db08a3e8d8860b9199c814405bdfc6}{RootPath}}\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}\ +\ sortingPath\ +\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}\ +\ newFileName);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fileMetaInfo.Id\ =\ \_fileCount;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_database.AddFileMetaInfo(fileMetaInfo,\ \_dataBaseFileName);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.WriteMessage(\$\textcolor{stringliteral}{"{}\{\_fileCount\}\ -\/\ File\ \{fileMetaInfo.FileName\}\ processed.\ Size:\ \{fileMetaInfo.FileSize\}"{}},\ \textcolor{stringliteral}{"{}aqua"{}},\ silent);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_fileCount++;}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00287}00287\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.WriteMessage(\textcolor{stringliteral}{"{}\(\backslash\)n======================================"{}},\ \textcolor{stringliteral}{"{}gold3"{}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.WriteMessage(\$\textcolor{stringliteral}{"{}\{\_fileCount\ -\/\ 1\}\ files\ processed."{}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.WriteMessage(\$\textcolor{stringliteral}{"{}\(\backslash\)nNo\ metadata\ rules\ defined\ for\ "{}},\ silent);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ ext\ \textcolor{keywordflow}{in}\ NoMetadataRule)}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_lib.WriteMessage(\$\textcolor{stringliteral}{"{}\ \{ext\}\ "{}},\ \textcolor{stringliteral}{"{}yellow"{}},\ silent);}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00297}\mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard_a99b8cd92a5cfb3b3d8c472d87f3477db}{00297}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard_a99b8cd92a5cfb3b3d8c472d87f3477db}{ExecuteCopy}}(\textcolor{keywordtype}{string}\ v1,\ \textcolor{keywordtype}{string}\ v2)}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotImplementedException();}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00302}\mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard_a9e7991d459d3e4e7b7910a0bf6f2ed1a}{00302}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_file_sorting_wiz_1_1_wizard_a9e7991d459d3e4e7b7910a0bf6f2ed1a}{ExecuteMove}}(\textcolor{keywordtype}{string}\ v1,\ \textcolor{keywordtype}{string}\ v2)}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotImplementedException();}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00306}00306\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wizard_8cs_source_l00307}00307\ \}}
 
 \end{DoxyCode}

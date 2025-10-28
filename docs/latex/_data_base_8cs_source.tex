@@ -1,0 +1,104 @@
+\doxysection{Data\+Base.\+cs}
+\hypertarget{_data_base_8cs_source}{}\label{_data_base_8cs_source}\index{D:/Projekte/Projekte\_2025/GitHub/FileSortingWizard/FileSortingWiz/DataBase.cs@{D:/Projekte/Projekte\_2025/GitHub/FileSortingWizard/FileSortingWiz/DataBase.cs}}
+\mbox{\hyperlink{_data_base_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00003}\mbox{\hyperlink{namespace_file_sorting_wiz}{00003}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_file_sorting_wiz}{FileSortingWiz}}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{class\ }FileMetaInfo}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00006}00006\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00007}00007\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ Id\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ FileName\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00009}00009\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ FilePath\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ NewFilePath\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ Attributes\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{long}?\ FileSize\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ DateTime?\ CreationTime\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ DateTime.MinValue;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ DateTime?\ ModificationTime\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ DateTime.MinValue;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ DateTime?\ AccessTime\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ DateTime.MinValue;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}?\ IsReadOnly\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ MIMEType\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ Permissions\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ Make\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ Model\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}?\ Orientation\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}?\ XResolution\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}?\ YResolution\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ ResolutionUnit\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}?\ ImageWidth\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}?\ ImageHeight\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ DateTime?\ MetaCreationTime\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ DateTime.MinValue;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ DateTime?\ MetaModificationTime\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ DateTime.MinValue;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ DateTime?\ MetaAccessTime\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ DateTime.MinValue;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ DateTime?\ MetaCreationTimeUtc\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ DateTime.MinValue;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ Compression\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{double}?\ ApertureValue\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{double}?\ MaxApertureValue\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ FileSource\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}?\ FocalLengthIn35mmFormat\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ SerialNumber\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ LensInfo\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ LensModel\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ ExposureTime\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ LightSource\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ Flash\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ ShutterSpeed\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{class\ }TSFileWizContext\ :\ DbContext}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00046}00046\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ \_dataBaseFileName;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ DbSet<FileMetaInfo>\ \_fileMetaInfos;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ TSFileWizContext(\textcolor{keywordtype}{string}\ dataBaseFileName)}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \_dataBaseFileName\ =\ dataBaseFileName;}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnConfiguring(DbContextOptionsBuilder\ optionsBuilder)}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!optionsBuilder.IsConfigured)}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ dbConnectionString\ =\ \$\textcolor{stringliteral}{"{}Data\ Source=\{\_dataBaseFileName\};"{}};}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ optionsBuilder.UseSqlite(dbConnectionString);}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ base.OnConfiguring(optionsBuilder);}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnModelCreating(ModelBuilder\ modelBuilder)}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ modelBuilder.Entity<FileMetaInfo>().ToTable(\textcolor{stringliteral}{"{}FileMetaInfos"{}});}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ modelBuilder.Entity<FileMetaInfo>().HasKey(f\ =>\ f.Id);}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ modelBuilder.Entity<FileMetaInfo>().Property(f\ =>\ f.Id).ValueGeneratedOnAdd();}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keyword}{class\ }DataBase}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00075}00075\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{void}\ InitializeDataBase(\textcolor{keywordtype}{string}\ dataBaseFileName)}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(File.Exists(dataBaseFileName))}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ File.Delete(dataBaseFileName);}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ DbContext\ dbContext\ =\ \textcolor{keyword}{new}\ TSFileWizContext(dataBaseFileName);}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ dbContext.Database.EnsureCreated();}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//dbContext.RemoveRange(dbContext.Set<FileMetaInfo>());}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{internal}\ \textcolor{keywordtype}{void}\ AddFileMetaInfo(FileMetaInfo\ fileMetaInfo,\ \textcolor{keywordtype}{string}\ dataBaseFileName)}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (var\ dbContext\ =\ \textcolor{keyword}{new}\ TSFileWizContext(dataBaseFileName))}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dbContext.Set<FileMetaInfo>().Add(fileMetaInfo);}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dbContext.SaveChanges();}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_data_base_8cs_source_l00098}00098\ \}}
+
+\end{DoxyCode}

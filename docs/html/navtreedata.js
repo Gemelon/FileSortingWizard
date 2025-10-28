@@ -50,7 +50,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_file_sorting_wiz_8_assembly_info_8cs.html"
+"_data_base_8cs.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

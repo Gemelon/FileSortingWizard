@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['databasefilename_0',['DataBaseFileName',['../class_file_sorting_wiz_1_1_rule.html#aebb6b171f3f8571f8a284c9aee613ec5',1,'FileSortingWiz::Rule']]],
-  ['databasepath_1',['DataBasePath',['../class_file_sorting_wiz_1_1_rule.html#ae0e488cc29e299f67ea1f21f306650d9',1,'FileSortingWiz::Rule']]],
-  ['datatype_2',['DataType',['../class_file_sorting_wiz_1_1_available_key_words.html#a0a2376375eace3cb89bb8799946eb2fc',1,'FileSortingWiz::AvailableKeyWords']]],
-  ['deserialize_3',['Deserialize',['../class_file_sorting_wiz_1_1_rule_file.html#aa33aa7079a0aa2900055862a06b43446',1,'FileSortingWiz::RuleFile']]],
-  ['documentrootpath_4',['documentRootPath',['../class_file_sorting_wiz_1_1_rule.html#a3d241acf1c4caf438570e3183a8d1f8e',1,'FileSortingWiz::Rule']]]
+  ['category_0',['Category',['../class_file_sorting_wiz_1_1_file_rules.html#a1a36506a2cc470f8043ca5f76917fce8',1,'FileSortingWiz::FileRules']]],
+  ['collectfiledata_1',['CollectFileData',['../class_file_sorting_wiz_1_1_wizard.html#ac99030116aeccc5f1ce41c0dd15e80cf',1,'FileSortingWiz::Wizard']]],
+  ['command_2',['Command',['../_program_8cs.html#a2f731e18d6065d37867503f49f97558c',1,'Program.cs']]],
+  ['contents_3',['Table of Contents',['../index.html#autotoc_md0',1,'']]],
+  ['customizable_20rules_4',['A file sorting wizard to organize your files based on customizable rules',['../D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/README.md#autotoc_md2',1,'']]]
 ];

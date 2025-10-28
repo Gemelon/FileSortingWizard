@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wizard_20manual_0',['File Sorting Wizard Manual',['../index.html',1,'']]]
+  ['rules_0',['A file sorting wizard to organize your files based on customizable rules',['../D:/Projekte/Projekte_2025/GitHub/FileSortingWizard/README.md#autotoc_md2',1,'']]]
 ];
